@@ -1,7 +1,4 @@
-// ❌ Tiene error de tipo
-const suma = (a: number, b: number): number => {
-	return a + b;
-};
+// Error forzado de tipo real
+const sumar = (a: number, b: number): number => a + b;
 
-const resultado = suma(1, '2'); // error: '2' es string
-console.log(resultado);
+const resultado = sumar(2, '3'); // ❌ string en vez de number
