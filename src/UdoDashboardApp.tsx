@@ -1,3 +1,4 @@
+import Button from '@mui/material/Button';
 export const UdoDashboardApp = () => {
-	return <div>UdoDashboardApp</div>;
+	return <Button variant='contained'>Hello world</Button>;
 };
