@@ -19,7 +19,11 @@
 		"noUnusedParameters": true,
 		"erasableSyntaxOnly": true,
 		"noFallthroughCasesInSwitch": true,
-		"noUncheckedSideEffectImports": true
+		"noUncheckedSideEffectImports": true,
+
+		// ✅ Agregado para soporte de imports absolutos y tipos personalizados
+		"baseUrl": "src",
+		"typeRoots": ["src/types", "node_modules/@types"]
 	},
 	"include": ["vite.config.ts"]
 }
