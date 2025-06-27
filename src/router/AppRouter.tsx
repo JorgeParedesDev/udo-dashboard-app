@@ -1,21 +1,22 @@
 /**
  * Archivo: AppRouter.tsx
- * Propósito: define las rutas principales de la aplicación usando React Router.
+ * Propósito: define las rutas principales de la aplicación y su layout general.
+ * Este componente asume que BrowserRouter ya está definido en main.tsx.
  */
 
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
+import { AppLayout } from '../components/layout/AppLayout';
 import { HomePage } from '../pages/HomePage';
 import { SettingsPage } from '../pages/SettingsPage';
 
-/**
- * Componente que gestiona las rutas disponibles en la app.
- */
 export const AppRouter = () => {
 	return (
 		<Routes>
-			<Route path='/' element={<HomePage />} />
-			<Route path='/settings' element={<SettingsPage />} />
+			<Route path='/' element={<AppLayout />}>
+				<Route index element={<HomePage />} />
+				<Route path='settings' element={<SettingsPage />} />
+			</Route>
 		</Routes>
 	);
 };

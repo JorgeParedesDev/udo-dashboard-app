@@ -8,7 +8,7 @@ import { CssBaseline, ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { useThemeMode } from './config/useThemeMode';
 import { getTheme } from './config/theme';
 
-const UdoDashboardApp = () => {
+export const UdoDashboardApp = () => {
 	const { mode } = useThemeMode(); // Obtiene el modo actual ('light' | 'dark')
 	const theme = getTheme(mode); // Genera el objeto de tema basado en ese modo
 
@@ -18,5 +18,3 @@ const UdoDashboardApp = () => {
 		</MuiThemeProvider>
 	);
 };
-
-export { UdoDashboardApp };
