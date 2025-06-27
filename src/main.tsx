@@ -1,22 +1,19 @@
 /**
  * Archivo: main.tsx
- * Propósito: Punto de entrada de la aplicación. Renderiza el componente raíz dentro del proveedor de tema.
+ * Propósito: punto de entrada principal. Renderiza el árbol de la app dentro del proveedor de tema.
  */
 
+import ReactDOM from 'react-dom/client';
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 
 import { ThemeProvider } from './config/ThemeContext';
-import { AppRouter } from './router/AppRouter';
+import { UdoDashboardApp } from './UdoDashboardApp';
 
-// Envuelve la app en StrictMode, en el router y en el proveedor del tema
-createRoot(document.getElementById('root')!).render(
+// Renderiza la aplicación dentro del ThemeProvider personalizado
+ReactDOM.createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<BrowserRouter>
-			<ThemeProvider>
-				<AppRouter />
-			</ThemeProvider>
-		</BrowserRouter>
+		<ThemeProvider>
+			<UdoDashboardApp />
+		</ThemeProvider>
 	</StrictMode>
 );

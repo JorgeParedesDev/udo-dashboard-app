@@ -1,12 +1,14 @@
 /**
  * Archivo: UdoDashboardApp.tsx
- * Propósito: Componente raíz de la app. Integra el sistema de theming y renderiza el contenido principal.
+ * Propósito: componente raíz de la aplicación. Aplica el tema dinámico según el modo y renderiza las rutas.
  */
 
 import { CssBaseline, ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { BrowserRouter } from 'react-router-dom';
 
 import { useThemeMode } from './config/useThemeMode';
 import { getTheme } from './config/theme';
+import { AppRouter } from './router/AppRouter';
 
 export const UdoDashboardApp = () => {
 	const { mode } = useThemeMode(); // Obtiene el modo actual ('light' | 'dark')
@@ -15,6 +17,9 @@ export const UdoDashboardApp = () => {
 	return (
 		<MuiThemeProvider theme={theme}>
 			<CssBaseline />
+			<BrowserRouter>
+				<AppRouter />
+			</BrowserRouter>
 		</MuiThemeProvider>
 	);
 };
