@@ -5,15 +5,18 @@
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
 import { ThemeProvider } from './config/ThemeContext';
-import { UdoDashboardApp } from './UdoDashboardApp';
+import { AppRouter } from './router/AppRouter';
 
-// Envuelve la app en StrictMode y en el proveedor del tema
+// Envuelve la app en StrictMode, en el router y en el proveedor del tema
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<ThemeProvider>
-			<UdoDashboardApp />
-		</ThemeProvider>
+		<BrowserRouter>
+			<ThemeProvider>
+				<AppRouter />
+			</ThemeProvider>
+		</BrowserRouter>
 	</StrictMode>
 );
