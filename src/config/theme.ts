@@ -22,6 +22,10 @@ export const getTheme = (mode: ThemeMode): Theme =>
 				header: mode === 'light' ? '#ffffff' : '#1a1a1a',
 				text: mode === 'light' ? '#1e1e1e' : '#f5f5f5',
 			},
+			logo: {
+				primary: mode === 'light' ? '#11296B' : '#00509D',
+				secondary: mode === 'light' ? '#FFDB57' : '#FFDB57',
+			},
 		},
 		shape: {
 			borderRadius: 8,

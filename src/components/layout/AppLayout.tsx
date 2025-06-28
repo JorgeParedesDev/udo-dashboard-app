@@ -1,43 +1,21 @@
 /**
  * Archivo: AppLayout.tsx
- * Propósito: define el layout principal con header y área de contenido enrutado.
+ * Propósito: define el layout principal con encabezado y área para rutas anidadas.
  */
 
-import { Box } from '@mui/material';
+/**
+ * Componente de layout principal que compone el encabezado de la app
+ * y el espacio donde se renderizan las rutas hijas mediante <Outlet />.
+ */
 import { Outlet } from 'react-router-dom';
-import { useTheme } from '@mui/material/styles';
+
+import { AppHeader } from './AppHeader';
 
 export const AppLayout = () => {
-	const theme = useTheme();
-
 	return (
-		<Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-			{/* Header principal de la aplicación (pendiente de implementación) */}
-			<Box
-				component='header'
-				sx={{
-					height: 64,
-					bgcolor: theme.palette.layout?.header,
-					color: theme.palette.layout?.text,
-					display: 'flex',
-					alignItems: 'center',
-					px: 2,
-				}}>
-				App Header
-			</Box>
-
-			{/* Contenido principal del layout */}
-			<Box
-				component='main'
-				sx={{
-					flexGrow: 1,
-					p: 2,
-					bgcolor: theme.palette.layout?.background,
-					color: theme.palette.layout?.text,
-					overflow: 'auto',
-				}}>
-				<Outlet />
-			</Box>
-		</Box>
+		<>
+			<AppHeader />
+			<Outlet />
+		</>
 	);
 };

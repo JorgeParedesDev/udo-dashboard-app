@@ -11,6 +11,7 @@ import { getTheme } from './config/theme';
 import { AppRouter } from './router/AppRouter';
 
 export const UdoDashboardApp = () => {
+	// const mode = 'dark'; // ← modo forzado
 	const { mode } = useThemeMode(); // Obtiene el modo actual ('light' | 'dark')
 	const theme = getTheme(mode); // Genera el objeto de tema basado en ese modo
 
