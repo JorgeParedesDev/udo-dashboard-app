@@ -5,6 +5,8 @@
 
 import { Box } from '@mui/material';
 
+import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
+
 import { ThemeToggleButton } from './ThemeToggleButton';
 import { AboutUdoButton } from './AboutUdoButton';
 import { NotificationsCenterButton } from './NotificationsCenterButton';
@@ -19,7 +21,7 @@ import { UserButton } from './UserButton';
  */
 export const AppHeaderActions = () => {
 	return (
-		<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+		<Box sx={appHeaderStyles.headerActionsContainer}>
 			<UserButton />
 			<LanguageButton />
 			<LocalStorageButton />

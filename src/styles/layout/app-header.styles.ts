@@ -28,4 +28,9 @@ export const appHeaderStyles = {
 		display: 'flex',
 		justifyContent: 'center',
 	},
+	headerActionsContainer: {
+		display: 'flex',
+		alignItems: 'center',
+		gap: 1,
+	},
 };
