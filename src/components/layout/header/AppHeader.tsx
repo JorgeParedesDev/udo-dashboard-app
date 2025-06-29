@@ -6,9 +6,11 @@
 import { AppBar, Box, IconButton, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useTheme } from '@mui/material/styles';
 
 import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
 import { Logo } from '../../ui/Logo';
+import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
 
 import { AppHeaderActions } from './AppHeaderActions';
 import { AppHeaderSearch } from './AppHeaderSearch';
@@ -18,36 +20,29 @@ import { AppHeaderSearch } from './AppHeaderSearch';
  * Incluye el botón de sidebar, el logo, y los íconos del lado derecho
  */
 export const AppHeader = () => {
+	const theme = useTheme();
 	const { translateText } = useTypedTranslation();
+
 	return (
-		<AppBar position='static' color='default' elevation={0}>
-			<Toolbar>
+		<AppBar position='static' sx={appHeaderStyles.appBar(theme)}>
+			<Toolbar sx={appHeaderStyles.toolbar}>
 				<IconButton
 					edge='start'
-					color='inherit'
+					sx={appHeaderStyles.menuButton(theme)}
 					aria-label={translateText('header.openSidebar')}>
 					<MenuIcon />
 				</IconButton>
 
-				<Link
-					to='/'
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						marginLeft: 8,
-					}}>
+				<Link to='/' style={appHeaderStyles.logoLink}>
 					<Logo
 						homeLinkLabel={translateText('header.homeLinkLabel')}
 					/>
 				</Link>
-				<Box
-					sx={{
-						flexGrow: 1,
-						display: 'flex',
-						justifyContent: 'center',
-					}}>
+
+				<Box sx={appHeaderStyles.searchContainer}>
 					<AppHeaderSearch />
 				</Box>
+
 				<AppHeaderActions />
 			</Toolbar>
 		</AppBar>

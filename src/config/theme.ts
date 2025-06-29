@@ -18,13 +18,20 @@ export const getTheme = (mode: ThemeMode): Theme =>
 		palette: {
 			mode,
 			layout: {
+				header: {
+					background: mode === 'light' ? '#ffffff' : '#1a1a1a',
+					text: mode === 'light' ? '#1e1e1e' : '#f5f5f5',
+					border:
+						mode === 'light'
+							? '1px solid #e0e0e0'
+							: '1px solid #2a2a2a',
+					iconColor: mode === 'light' ? '#1e1e1e' : '#f5f5f5',
+				},
 				background: mode === 'light' ? '#f5f5f5' : '#121212',
-				header: mode === 'light' ? '#ffffff' : '#1a1a1a',
-				text: mode === 'light' ? '#1e1e1e' : '#f5f5f5',
 			},
 			logo: {
 				primary: mode === 'light' ? '#11296B' : '#00509D',
-				secondary: mode === 'light' ? '#FFDB57' : '#FFDB57',
+				secondary: '#FFDB57',
 			},
 		},
 		shape: {

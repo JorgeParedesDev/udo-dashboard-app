@@ -12,9 +12,13 @@ declare module '@mui/material/styles' {
 	 */
 	interface Palette {
 		layout: {
+			header: {
+				background: string;
+				text: string;
+				border: string;
+				iconColor: string;
+			};
 			background: string;
-			header: string;
-			text: string;
 		};
 		logo: {
 			primary: string;
@@ -28,9 +32,13 @@ declare module '@mui/material/styles' {
 	 */
 	interface PaletteOptions {
 		layout?: {
+			header?: {
+				background?: string;
+				text?: string;
+				border?: string;
+				iconColor?: string;
+			};
 			background?: string;
-			header?: string;
-			text?: string;
 		};
 		logo?: {
 			primary?: string;
