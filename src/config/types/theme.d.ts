@@ -17,6 +17,13 @@ declare module '@mui/material/styles' {
 				text: string;
 				border: string;
 				iconColor: string;
+
+				search: {
+					background: string;
+					border: string;
+					text: string;
+					iconColor: string;
+				};
 			};
 			background: string;
 		};
@@ -37,6 +44,13 @@ declare module '@mui/material/styles' {
 				text?: string;
 				border?: string;
 				iconColor?: string;
+
+				search?: {
+					background?: string;
+					border?: string;
+					text?: string;
+					iconColor?: string;
+				};
 			};
 			background?: string;
 		};

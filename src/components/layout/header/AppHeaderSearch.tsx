@@ -5,34 +5,28 @@
 
 import { Paper, IconButton, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { useTheme } from '@mui/material/styles';
 
 import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
+import { appHeaderSearchStyles } from '../../../styles/layout/app-header-search.styles';
 
 /**
  * Componente visual centrado entre logo e íconos. Sin funcionalidad.
  */
 export const AppHeaderSearch = () => {
+	const theme = useTheme();
 	const { translateText } = useTypedTranslation();
+
 	return (
-		<Paper
-			component='form'
-			sx={{
-				p: '2px 8px',
-				display: 'flex',
-				alignItems: 'center',
-				width: 300,
-				borderRadius: 1,
-				boxShadow: 'none',
-				bgcolor: 'background.default',
-			}}>
+		<Paper component='form' sx={appHeaderSearchStyles.container(theme)}>
 			<InputBase
-				sx={{ ml: 1, flex: 1 }}
+				sx={appHeaderSearchStyles.input(theme)}
 				placeholder={translateText('header.search')}
 				inputProps={{ 'aria-label': translateText('header.search') }}
 			/>
 			<IconButton
 				type='submit'
-				sx={{ p: '10px' }}
+				sx={appHeaderSearchStyles.iconButton(theme)}
 				aria-label={translateText('header.search')}>
 				<SearchIcon />
 			</IconButton>

@@ -26,6 +26,20 @@ export const getTheme = (mode: ThemeMode): Theme =>
 							? '1px solid #e0e0e0'
 							: '1px solid #2a2a2a',
 					iconColor: mode === 'light' ? '#1e1e1e' : '#f5f5f5',
+
+					/**
+					 * Estilos visuales específicos para el componente AppHeaderSearch.
+					 * Permite cambiar fondo, borde, texto e ícono de forma centralizada.
+					 */
+					search: {
+						background: mode === 'light' ? '#f0f0f0' : '#2a2a2a',
+						border:
+							mode === 'light'
+								? '1px solid #ccc'
+								: '1px solid #444',
+						text: mode === 'light' ? '#1e1e1e' : '#f5f5f5',
+						iconColor: mode === 'light' ? '#666' : '#ddd',
+					},
 				},
 				background: mode === 'light' ? '#f5f5f5' : '#121212',
 			},
