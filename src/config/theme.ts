@@ -7,14 +7,26 @@ import { createTheme, type Theme } from '@mui/material/styles';
 
 import type { ThemeMode } from './types/theme';
 
+const defaultTheme = createTheme(); // se usa para acceder a breakpoints tipados
+
 /**
  * Devuelve el objeto de tema personalizado basado en el modo actual.
- * Incluye configuración de paleta y forma (shape).
- *
- * La clave 'layout' se declara dentro de 'palette' para que esté tipada y disponible en theme.palette.layout.
+ * Incluye paleta de colores extendida, forma y overrides globales de componentes.
  */
 export const getTheme = (mode: ThemeMode): Theme =>
 	createTheme({
+		// Desactiva el responsive redefiniendo los valores a 0
+		breakpoints: {
+			values: {
+				xs: 0,
+				sm: 0,
+				md: 0,
+				lg: 0,
+				xl: 0,
+			},
+		},
+
+		// Paleta personalizada extendida para layout y branding
 		palette: {
 			mode,
 			layout: {
@@ -27,10 +39,7 @@ export const getTheme = (mode: ThemeMode): Theme =>
 							: '1px solid #2a2a2a',
 					iconColor: mode === 'light' ? '#1e1e1e' : '#f5f5f5',
 
-					/**
-					 * Estilos visuales específicos para el componente AppHeaderSearch.
-					 * Permite cambiar fondo, borde, texto e ícono de forma centralizada.
-					 */
+					// Estilos para el campo de búsqueda del header
 					search: {
 						background: mode === 'light' ? '#f0f0f0' : '#2a2a2a',
 						border:
@@ -48,7 +57,24 @@ export const getTheme = (mode: ThemeMode): Theme =>
 				secondary: '#FFDB57',
 			},
 		},
+
+		// Estilo general de los bordes
 		shape: {
 			borderRadius: 8,
+		},
+
+		// Overrides globales de componentes MUI
+		components: {
+			MuiToolbar: {
+				styleOverrides: {
+					root: {
+						// Aplica esta altura fija en todas las resoluciones (gracias a up('xs'))
+						[defaultTheme.breakpoints.up('xs')]: {
+							minHeight: '64px',
+							height: '64px',
+						},
+					},
+				},
+			},
 		},
 	});
