@@ -6,13 +6,18 @@
 import { IconButton, Tooltip } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 
+import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
+
 /**
  * Componente visual sin funcionalidad, representando notificaciones o alertas.
  */
 export const AlertsButton = () => {
+	const { translateText } = useTypedTranslation();
 	return (
-		<Tooltip title='Alerts'>
-			<IconButton color='inherit' aria-label='alerts'>
+		<Tooltip title={translateText('header.alerts')}>
+			<IconButton
+				color='inherit'
+				aria-label={translateText('header.alerts')}>
 				<NotificationsNoneOutlinedIcon />
 			</IconButton>
 		</Tooltip>

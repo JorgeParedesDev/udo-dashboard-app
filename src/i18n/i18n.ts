@@ -18,7 +18,7 @@ const resources: Resource = {
 
 i18n.use(initReactI18next).init({
 	resources,
-	lng: 'en', // Idioma por defecto
+	lng: 'es', // Idioma por defecto
 	fallbackLng: 'en',
 	interpolation: {
 		escapeValue: false, // React ya maneja el escape

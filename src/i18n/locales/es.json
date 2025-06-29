@@ -1,6 +1,15 @@
 {
 	"header": {
+		"about": "Acerca de UDo",
+		"alerts": "Alertas",
 		"homeLinkLabel": "Ir al inicio",
-		"openSidebar": "Abrir menú lateral"
+		"language": "Idioma",
+		"localStorage": "Almacenamiento local",
+		"notificationsCenter": "Centro de notificaciones",
+		"openSidebar": "Abrir menú lateral",
+		"search": "Buscar",
+		"slaAlerts": "Alertas SLA",
+		"toggleTheme": "Cambiar tema",
+		"user": "Usuario"
 	}
 }

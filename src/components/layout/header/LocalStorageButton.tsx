@@ -6,13 +6,18 @@
 import { IconButton, Tooltip } from '@mui/material';
 import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
 
+import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
+
 /**
  * Componente visual sin funcionalidad, representando almacenamiento local.
  */
 export const LocalStorageButton = () => {
+	const { translateText } = useTypedTranslation();
 	return (
-		<Tooltip title='Local Storage'>
-			<IconButton color='inherit' aria-label='local storage'>
+		<Tooltip title={translateText('header.localStorage')}>
+			<IconButton
+				color='inherit'
+				aria-label={translateText('header.localStorage')}>
 				<StorageOutlinedIcon />
 			</IconButton>
 		</Tooltip>
