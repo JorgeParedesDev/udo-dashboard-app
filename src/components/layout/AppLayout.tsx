@@ -9,7 +9,7 @@
  */
 import { Outlet } from 'react-router-dom';
 
-import { AppHeader } from './AppHeader';
+import { AppHeader } from './header/AppHeader';
 
 export const AppLayout = () => {
 	return (
