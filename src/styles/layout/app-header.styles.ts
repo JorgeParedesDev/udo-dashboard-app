@@ -33,4 +33,7 @@ export const appHeaderStyles = {
 		alignItems: 'center',
 		gap: 1,
 	},
+	iconButtonHeader: (theme: Theme) => ({
+		color: theme.palette.layout.header.iconColor,
+	}),
 };
