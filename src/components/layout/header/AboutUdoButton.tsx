@@ -19,6 +19,7 @@ export const AboutUdoButton = () => {
 	return (
 		<Tooltip title={translateText('header.about')}>
 			<IconButton
+				color='error'
 				sx={appHeaderStyles.iconButtonHeader(theme)}
 				aria-label={translateText('header.about')}>
 				<InfoOutlinedIcon />

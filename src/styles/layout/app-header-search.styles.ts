@@ -3,26 +3,31 @@
  * Propósito: Estilos centralizados para el componente AppHeaderSearch.
  */
 
-import type { Theme } from '@mui/material/styles';
+import { alpha, type Theme } from '@mui/material/styles';
 
 export const appHeaderSearchStyles = {
 	container: (theme: Theme) => ({
-		padding: '2px 8px',
+		padding: '0 6px',
 		display: 'flex',
 		alignItems: 'center',
 		width: 300,
-		borderRadius: theme.shape.borderRadius,
+		height: 30,
 		boxShadow: 'none',
-		backgroundColor: theme.palette.layout.header.search.background,
-		border: theme.palette.layout.header.search.border,
+		backgroundColor: alpha(
+			theme.palette.layout.header.search.background,
+			theme.palette.mode === 'light' ? 0.08 : 0.16
+		),
+		// border: theme.palette.layout.header.search.border,
 	}),
 	input: (theme: Theme) => ({
-		marginLeft: theme.spacing(1),
+		marginLeft: theme.spacing(0.5),
 		flex: 1,
 		color: theme.palette.layout.header.search.text,
+		fontSize: '0.85rem',
+		lineHeight: 1.2,
 	}),
 	iconButton: (theme: Theme) => ({
-		padding: '10px',
+		padding: '4px',
 		color: theme.palette.layout.header.search.iconColor,
 	}),
 };

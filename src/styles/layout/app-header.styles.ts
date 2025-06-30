@@ -3,20 +3,12 @@
  * Propósito: Estilos centralizados para el componente AppHeader.
  */
 
-import type { Theme } from '@mui/material/styles';
+import { alpha, type Theme } from '@mui/material/styles';
 
 export const appHeaderStyles = {
 	appBar: (theme: Theme) => ({
 		backgroundColor: theme.palette.layout.header.background,
-		color: theme.palette.layout.header.text,
-		borderBottom: theme.palette.layout.header.border,
 		boxShadow: 'none',
-	}),
-	toolbar: {
-		minHeight: '64px',
-	},
-	menuButton: (theme: Theme) => ({
-		color: theme.palette.layout.header.iconColor,
 	}),
 	logoLink: {
 		display: 'flex',
@@ -35,5 +27,12 @@ export const appHeaderStyles = {
 	},
 	iconButtonHeader: (theme: Theme) => ({
 		color: theme.palette.layout.header.iconColor,
+		backgroundColor: 'transparent',
+		'&:hover': {
+			backgroundColor: alpha(
+				theme.palette.layout.header.iconColor,
+				theme.palette.mode === 'light' ? 0.08 : 0.16
+			),
+		},
 	}),
 };

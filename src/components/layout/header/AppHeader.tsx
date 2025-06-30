@@ -24,11 +24,14 @@ export const AppHeader = () => {
 	const { translateText } = useTypedTranslation();
 
 	return (
-		<AppBar position='static' sx={appHeaderStyles.appBar(theme)}>
-			<Toolbar sx={appHeaderStyles.toolbar}>
+		<AppBar
+			position='static'
+			elevation={0}
+			sx={appHeaderStyles.appBar(theme)}>
+			<Toolbar>
 				<IconButton
 					edge='start'
-					sx={appHeaderStyles.menuButton(theme)}
+					sx={appHeaderStyles.iconButtonHeader(theme)}
 					aria-label={translateText('header.openSidebar')}>
 					<MenuIcon />
 				</IconButton>
