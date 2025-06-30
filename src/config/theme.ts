@@ -6,12 +6,17 @@
 import { createTheme, type Theme } from '@mui/material/styles';
 
 import type { ThemeMode } from './types/theme';
+import { themeColors } from './theme-defaults';
 
 const defaultTheme = createTheme(); // se usa para acceder a breakpoints tipados
 
 /**
  * Devuelve el objeto de tema personalizado basado en el modo actual.
- * Incluye paleta de colores extendida, forma y overrides globales de componentes.
+ * Incluye:
+ * - paleta extendida (`layout`, `logo`, `primary`, `secondary`, `text`, `background`)
+ * - tipografía personalizada
+ * - breakpoints fijos
+ * - overrides globales de componentes
  */
 export const getTheme = (mode: ThemeMode): Theme =>
 	createTheme({
@@ -26,26 +31,10 @@ export const getTheme = (mode: ThemeMode): Theme =>
 			},
 		},
 
-		// Paleta personalizada extendida para layout y branding
+		// Paleta completa basada en el modo (incluye valores extendidos)
 		palette: {
 			mode,
-			layout: {
-				header: {
-					background: mode === 'light' ? '#FFFFFF' : '#141A21',
-					text: mode === 'light' ? '#637381' : '#919EAB',
-					iconColor: mode === 'light' ? '#637381' : '#919EAB',
-					search: {
-						background: mode === 'light' ? '#637381' : '#919EAB',
-						text: mode === 'light' ? '#637381' : '#919EAB',
-						iconColor: mode === 'light' ? '#637381' : '#919EAB',
-					},
-				},
-				background: mode === 'light' ? '#FFFFFF' : '#141A21',
-			},
-			logo: {
-				primary: mode === 'light' ? '#11296B' : '#00509D',
-				secondary: '#FFDB57',
-			},
+			...themeColors[mode],
 		},
 
 		// Tipografía personalizada para títulos y cuerpo
