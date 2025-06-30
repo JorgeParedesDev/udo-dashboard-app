@@ -15,12 +15,9 @@ declare module '@mui/material/styles' {
 			header: {
 				background: string;
 				text: string;
-				border: string;
 				iconColor: string;
-
 				search: {
 					background: string;
-					border: string;
 					text: string;
 					iconColor: string;
 				};
@@ -42,12 +39,9 @@ declare module '@mui/material/styles' {
 			header?: {
 				background?: string;
 				text?: string;
-				border?: string;
 				iconColor?: string;
-
 				search?: {
 					background?: string;
-					border?: string;
 					text?: string;
 					iconColor?: string;
 				};

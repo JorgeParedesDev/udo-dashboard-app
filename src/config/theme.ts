@@ -34,8 +34,6 @@ export const getTheme = (mode: ThemeMode): Theme =>
 					background: mode === 'light' ? '#FFFFFF' : '#141A21',
 					text: mode === 'light' ? '#637381' : '#919EAB',
 					iconColor: mode === 'light' ? '#637381' : '#919EAB',
-
-					// Estilos para el campo de búsqueda del header
 					search: {
 						background: mode === 'light' ? '#637381' : '#919EAB',
 						text: mode === 'light' ? '#637381' : '#919EAB',
@@ -50,6 +48,40 @@ export const getTheme = (mode: ThemeMode): Theme =>
 			},
 		},
 
+		// Tipografía personalizada para títulos y cuerpo
+		typography: {
+			fontFamily: '"Inter", "Source Sans 3", sans-serif',
+			h1: {
+				fontSize: '2rem',
+				fontWeight: 700,
+			},
+			h2: {
+				fontSize: '1.75rem',
+				fontWeight: 600,
+			},
+			h3: {
+				fontSize: '1.5rem',
+				fontWeight: 600,
+			},
+			h4: {
+				fontSize: '1.25rem',
+				fontWeight: 500,
+			},
+			h5: {
+				fontSize: '1.125rem',
+				fontWeight: 500,
+			},
+			body1: {
+				fontSize: '1rem',
+				fontWeight: 400,
+			},
+			button: {
+				fontSize: '0.875rem',
+				fontWeight: 600,
+				textTransform: 'none',
+			},
+		},
+
 		// Estilo general de los bordes
 		shape: {
 			borderRadius: 8,
@@ -60,7 +92,6 @@ export const getTheme = (mode: ThemeMode): Theme =>
 			MuiToolbar: {
 				styleOverrides: {
 					root: {
-						// Aplica esta altura fija en todas las resoluciones (gracias a up('xs'))
 						[defaultTheme.breakpoints.up('xs')]: {
 							minHeight: '48px',
 							height: '48px',
