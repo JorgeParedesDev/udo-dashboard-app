@@ -1,26 +1,33 @@
 /**
  * Archivo: ThemeToggleButton.tsx
- * Propósito: ícono en el Header para alternar el tema (modo claro/oscuro).
+ * Propósito: Ícono en el Header para alternar el tema (modo claro/oscuro).
  */
 
-import { IconButton, Tooltip, useTheme } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
+import { useThemeMode } from '../../../config/useThemeMode';
 
 /**
- * Componente visual sin funcionalidad, representando la sección de alternancia de tema.
+ * Botón funcional para alternar entre modo claro y oscuro.
  */
 export const ThemeToggleButton = () => {
 	const { translateText } = useTypedTranslation();
-	const theme = useTheme();
+	const { mode, toggleColorMode } = useThemeMode();
+
+	const isDark = mode === 'dark';
+	const icon = isDark ? <LightModeIcon /> : <DarkModeIcon />;
+
 	return (
 		<Tooltip title={translateText('header.toggleTheme')}>
 			<IconButton
-				sx={appHeaderStyles.iconButtonHeader(theme)}
+				onClick={toggleColorMode}
+				sx={theme => appHeaderStyles.iconButtonHeader(theme)}
 				aria-label={translateText('header.toggleTheme')}>
-				<DarkModeIcon />
+				{icon}
 			</IconButton>
 		</Tooltip>
 	);
