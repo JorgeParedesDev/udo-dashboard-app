@@ -39,6 +39,9 @@ export const LanguageMenu = ({
 			anchorEl={anchorEl}
 			open={open}
 			onClose={onClose}
+			slotProps={{
+				paper: { sx: { width: 160 } },
+			}}
 			anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
 			{availableLanguages.map(({ code, label }) => (
