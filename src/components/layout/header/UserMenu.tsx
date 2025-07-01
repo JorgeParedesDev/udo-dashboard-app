@@ -16,11 +16,14 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
 import type { AnchorMenuProps } from '../../../types/layout/menu';
+import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
 
 /**
  * Componente exportado que representa el menú desplegable del botón de usuario.
  */
 export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
+	const { translateText } = useTypedTranslation();
+
 	return (
 		<Menu
 			anchorEl={anchorEl}
@@ -35,14 +38,14 @@ export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 				<ListItemIcon>
 					<AccountCircleIcon fontSize='small' />
 				</ListItemIcon>
-				<ListItemText>My profile</ListItemText>
+				<ListItemText>{translateText('header.myProfile')}</ListItemText>
 			</MenuItem>
 
 			<MenuItem onClick={onClose}>
 				<ListItemIcon>
 					<InfoOutlinedIcon fontSize='small' />
 				</ListItemIcon>
-				<ListItemText>About UDo</ListItemText>
+				<ListItemText>{translateText('header.about')}</ListItemText>
 			</MenuItem>
 
 			<Divider sx={appHeaderStyles.userMenuDivider} />
@@ -51,7 +54,7 @@ export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 				<ListItemIcon>
 					<LogoutIcon fontSize='small' />
 				</ListItemIcon>
-				<ListItemText>Logout</ListItemText>
+				<ListItemText>{translateText('header.logout')}</ListItemText>
 			</MenuItem>
 		</Menu>
 	);

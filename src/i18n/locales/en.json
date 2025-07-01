@@ -10,6 +10,8 @@
 		"search": "Search",
 		"slaAlerts": "SLA Alerts",
 		"toggleTheme": "Toggle theme",
-		"user": "User"
+		"user": "User",
+		"myProfile": "My profile",
+		"logout": "Logout"
 	}
 }
