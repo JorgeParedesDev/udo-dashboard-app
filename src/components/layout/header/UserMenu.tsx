@@ -13,7 +13,8 @@ import {
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
-import type { FC } from 'react';
+
+import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
 
 /**
  * Props para el menú del usuario.
@@ -27,14 +28,14 @@ type UserMenuProps = {
 /**
  * Componente exportado que representa el menú desplegable del botón de usuario.
  */
-export const UserMenu: FC<UserMenuProps> = ({ anchorEl, open, onClose }) => {
+export const UserMenu = ({ anchorEl, open, onClose }: UserMenuProps) => {
 	return (
 		<Menu
 			anchorEl={anchorEl}
 			open={open}
 			onClose={onClose}
 			slotProps={{
-				paper: { sx: { width: 180 } },
+				paper: { sx: appHeaderStyles.userMenuPaper },
 			}}
 			anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
@@ -52,7 +53,7 @@ export const UserMenu: FC<UserMenuProps> = ({ anchorEl, open, onClose }) => {
 				<ListItemText>About UDo</ListItemText>
 			</MenuItem>
 
-			<Divider sx={{ my: 0.5 }} />
+			<Divider sx={appHeaderStyles.userMenuDivider} />
 
 			<MenuItem onClick={onClose}>
 				<ListItemIcon>

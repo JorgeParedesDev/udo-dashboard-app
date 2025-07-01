@@ -9,6 +9,7 @@ import CheckIcon from '@mui/icons-material/Check';
 
 import { i18n } from '../../../i18n/i18n';
 import { availableLanguages } from '../../../i18n/languages';
+import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
 
 /**
  * Props para el menú de idiomas.
@@ -40,7 +41,7 @@ export const LanguageMenu = ({
 			open={open}
 			onClose={onClose}
 			slotProps={{
-				paper: { sx: { width: 160 } },
+				paper: { sx: appHeaderStyles.languageMenuPaper },
 			}}
 			anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'right' }}>

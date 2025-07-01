@@ -35,4 +35,13 @@ export const appHeaderStyles = {
 			),
 		},
 	}),
+	userMenuPaper: {
+		width: 180,
+	},
+	userMenuDivider: {
+		my: 0.5,
+	},
+	languageMenuPaper: {
+		width: 160,
+	},
 };
