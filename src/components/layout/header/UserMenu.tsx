@@ -15,20 +15,12 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
-
-/**
- * Props para el menú del usuario.
- */
-type UserMenuProps = {
-	anchorEl: HTMLElement | null;
-	open: boolean;
-	onClose: () => void;
-};
+import type { AnchorMenuProps } from '../../../types/layout/menu';
 
 /**
  * Componente exportado que representa el menú desplegable del botón de usuario.
  */
-export const UserMenu = ({ anchorEl, open, onClose }: UserMenuProps) => {
+export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 	return (
 		<Menu
 			anchorEl={anchorEl}
