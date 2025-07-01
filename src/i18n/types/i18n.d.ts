@@ -1,12 +1,10 @@
 /**
  * Archivo: i18n.d.ts
- * Propósito: define el tipo recursivo para claves de traducción basadas en el JSON original.
+ * Propósito: define el tipo recursivo para claves de traducción basadas en el JSON original
+ * y los idiomas disponibles en la aplicación.
  */
 
-// Importamos el archivo JSON de traducciones para inferir las claves válidas.
-// La ruta original era incorrecta, lo que hacía fallar el import en tiempo de
-// compilación de tipos.
-import type en from '../locales/en.json';
+import type en from './en.json';
 
 type RecursiveKeyOf<TObj extends object> = {
 	[TKey in keyof TObj & string]: TObj[TKey] extends object
@@ -15,3 +13,13 @@ type RecursiveKeyOf<TObj extends object> = {
 }[keyof TObj & string];
 
 export type TranslationKeys = RecursiveKeyOf<typeof en>;
+
+/**
+ * Códigos de idioma soportados por la app.
+ */
+export type LanguageCode = 'es' | 'en';
+
+export type LanguageOption = {
+	code: LanguageCode;
+	label: string;
+};

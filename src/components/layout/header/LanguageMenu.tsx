@@ -7,19 +7,17 @@ import { Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import TranslateIcon from '@mui/icons-material/Translate';
 import CheckIcon from '@mui/icons-material/Check';
 
-import { i18n } from '../../../i18n/i18n'; // acceso directo a i18n
+import { i18n } from '../../../i18n/i18n';
+import { availableLanguages } from '../../../i18n/languages';
 
+/**
+ * Props para el menú de idiomas.
+ */
 type LanguageMenuProps = {
 	anchorEl: HTMLElement | null;
 	open: boolean;
 	onClose: () => void;
 };
-
-// Lista de idiomas disponibles. Se puede expandir más adelante.
-const LANGUAGES = [
-	{ code: 'es', label: 'Español' },
-	{ code: 'en', label: 'English' },
-];
 
 /**
  * Componente exportado que muestra el menú de selección de idioma.
@@ -43,7 +41,7 @@ export const LanguageMenu = ({
 			onClose={onClose}
 			anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
-			{LANGUAGES.map(({ code, label }) => (
+			{availableLanguages.map(({ code, label }) => (
 				<MenuItem
 					key={code}
 					onClick={() => handleSelectLanguage(code)}
