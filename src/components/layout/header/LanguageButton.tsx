@@ -31,9 +31,6 @@ export const LanguageButton = () => {
 		setAnchorEl(null);
 	};
 
-	// Idioma actual simulado (se integrará más adelante con i18n)
-	const currentLanguage = 'es';
-
 	return (
 		<>
 			<Tooltip title={translateText('header.language')}>
@@ -49,7 +46,6 @@ export const LanguageButton = () => {
 				anchorEl={anchorEl}
 				open={isMenuOpen}
 				onClose={handleClose}
-				currentLanguage={currentLanguage}
 			/>
 		</>
 	);

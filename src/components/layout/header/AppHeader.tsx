@@ -3,7 +3,7 @@
  * Propósito: define el Header principal de la aplicación.
  */
 
-import { AppBar, Box, IconButton, Toolbar } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Tooltip } from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
@@ -29,18 +29,24 @@ export const AppHeader = () => {
 			elevation={0}
 			sx={appHeaderStyles.appBar(theme)}>
 			<Toolbar>
-				<IconButton
-					edge='start'
-					sx={appHeaderStyles.iconButtonHeader(theme)}
-					aria-label={translateText('header.openSidebar')}>
-					<MenuIcon />
-				</IconButton>
+				<Tooltip title={translateText('header.openSidebar')}>
+					<IconButton
+						edge='start'
+						sx={appHeaderStyles.iconButtonHeader(theme)}
+						aria-label={translateText('header.openSidebar')}>
+						<MenuIcon />
+					</IconButton>
+				</Tooltip>
 
-				<Link to='/' style={appHeaderStyles.logoLink}>
-					<Logo
-						homeLinkLabel={translateText('header.homeLinkLabel')}
-					/>
-				</Link>
+				<Tooltip title={translateText('header.homeLinkLabel')}>
+					<Link to='/' style={appHeaderStyles.logoLink}>
+						<Logo
+							homeLinkLabel={translateText(
+								'header.homeLinkLabel'
+							)}
+						/>
+					</Link>
+				</Tooltip>
 
 				<Box sx={appHeaderStyles.searchContainer}>
 					<AppHeaderSearch />

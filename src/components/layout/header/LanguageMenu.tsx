@@ -1,17 +1,18 @@
 /**
  * Archivo: LanguageMenu.tsx
- * Propósito: Menú visual desplegable para seleccionar idioma (aún sin lógica funcional).
+ * Propósito: Menú visual desplegable para seleccionar idioma (funcionalidad activa con i18next).
  */
 
 import { Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import TranslateIcon from '@mui/icons-material/Translate';
 import CheckIcon from '@mui/icons-material/Check';
 
+import { i18n } from '../../../i18n/i18n'; // acceso directo a i18n
+
 type LanguageMenuProps = {
 	anchorEl: HTMLElement | null;
 	open: boolean;
 	onClose: () => void;
-	currentLanguage: string;
 };
 
 // Lista de idiomas disponibles. Se puede expandir más adelante.
@@ -27,8 +28,14 @@ export const LanguageMenu = ({
 	anchorEl,
 	open,
 	onClose,
-	currentLanguage,
 }: LanguageMenuProps) => {
+	const currentLanguage = i18n.language;
+
+	const handleSelectLanguage = async (code: string) => {
+		await i18n.changeLanguage(code);
+		onClose();
+	};
+
 	return (
 		<Menu
 			anchorEl={anchorEl}
@@ -39,7 +46,7 @@ export const LanguageMenu = ({
 			{LANGUAGES.map(({ code, label }) => (
 				<MenuItem
 					key={code}
-					onClick={onClose}
+					onClick={() => handleSelectLanguage(code)}
 					selected={code === currentLanguage}>
 					<ListItemIcon>
 						<TranslateIcon fontSize='small' />
