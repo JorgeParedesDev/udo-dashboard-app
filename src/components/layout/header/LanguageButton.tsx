@@ -3,12 +3,12 @@
  * Propósito: Ícono visual que despliega el menú de selección de idioma.
  */
 
-import { useState } from 'react';
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 
 import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
+import { useAnchorMenu } from '../../../hooks/useAnchorMenu';
 
 import { LanguageMenu } from './LanguageMenu';
 
@@ -20,16 +20,7 @@ export const LanguageButton = () => {
 	const { translateText } = useTypedTranslation();
 	const theme = useTheme();
 
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-	const isMenuOpen = Boolean(anchorEl);
-
-	const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
+	const { anchorEl, isOpen, handleOpen, handleClose } = useAnchorMenu();
 
 	return (
 		<>
@@ -44,7 +35,7 @@ export const LanguageButton = () => {
 
 			<LanguageMenu
 				anchorEl={anchorEl}
-				open={isMenuOpen}
+				open={isOpen}
 				onClose={handleClose}
 			/>
 		</>

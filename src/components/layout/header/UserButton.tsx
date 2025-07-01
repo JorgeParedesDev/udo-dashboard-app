@@ -3,12 +3,12 @@
  * Propósito: Botón de usuario ubicado en el AppHeader. Muestra un menú desplegable al hacer clic.
  */
 
-import { useState } from 'react';
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
+import { useAnchorMenu } from '../../../hooks/useAnchorMenu';
 
 import { UserMenu } from './UserMenu';
 
@@ -19,33 +19,20 @@ export const UserButton = () => {
 	const { translateText } = useTypedTranslation();
 	const theme = useTheme();
 
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-	const open = Boolean(anchorEl);
-
-	const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleCloseMenu = () => {
-		setAnchorEl(null);
-	};
+	const { anchorEl, isOpen, handleOpen, handleClose } = useAnchorMenu();
 
 	return (
 		<>
 			<Tooltip title={translateText('header.user')}>
 				<IconButton
 					aria-label={translateText('header.user')}
-					onClick={handleOpenMenu}
+					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}>
 					<AccountCircleOutlinedIcon />
 				</IconButton>
 			</Tooltip>
 
-			<UserMenu
-				anchorEl={anchorEl}
-				open={open}
-				onClose={handleCloseMenu}
-			/>
+			<UserMenu anchorEl={anchorEl} open={isOpen} onClose={handleClose} />
 		</>
 	);
 };

@@ -23,6 +23,7 @@ type LanguageMenuProps = {
 /**
  * Componente exportado que muestra el menú de selección de idioma.
  */
+
 export const LanguageMenu = ({
 	anchorEl,
 	open,
