@@ -1,28 +1,56 @@
 /**
  * Archivo: LanguageButton.tsx
- * Propósito: ícono visual para cambiar el idioma (sin funcionalidad).
+ * Propósito: Ícono visual que despliega el menú de selección de idioma.
  */
 
+import { useState } from 'react';
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 
 import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
 
+import { LanguageMenu } from './LanguageMenu';
+
 /**
- * Componente visual sin funcionalidad, representa el cambio de idioma.
+ * Componente exportado que muestra el botón para cambiar de idioma.
+ * Al hacer clic, despliega un menú visual con los idiomas disponibles.
  */
 export const LanguageButton = () => {
 	const { translateText } = useTypedTranslation();
 	const theme = useTheme();
 
+	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+	const isMenuOpen = Boolean(anchorEl);
+
+	const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
+
+	// Idioma actual simulado (se integrará más adelante con i18n)
+	const currentLanguage = 'es';
+
 	return (
-		<Tooltip title={translateText('header.language')}>
-			<IconButton
-				sx={appHeaderStyles.iconButtonHeader(theme)}
-				aria-label={translateText('header.language')}>
-				<LanguageOutlinedIcon />
-			</IconButton>
-		</Tooltip>
+		<>
+			<Tooltip title={translateText('header.language')}>
+				<IconButton
+					sx={appHeaderStyles.iconButtonHeader(theme)}
+					onClick={handleOpen}
+					aria-label={translateText('header.language')}>
+					<LanguageOutlinedIcon />
+				</IconButton>
+			</Tooltip>
+
+			<LanguageMenu
+				anchorEl={anchorEl}
+				open={isMenuOpen}
+				onClose={handleClose}
+				currentLanguage={currentLanguage}
+			/>
+		</>
 	);
 };
