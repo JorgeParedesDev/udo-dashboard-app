@@ -44,4 +44,12 @@ export const appHeaderStyles = {
 	languageMenuPaper: {
 		width: 160,
 	},
+	// Estilos para el AboutUdoMenu
+	aboutMenuTitle: {
+		fontWeight: 600,
+	},
+	aboutMenuGroupLabel: {
+		fontSize: 13,
+		fontWeight: 500,
+	},
 };

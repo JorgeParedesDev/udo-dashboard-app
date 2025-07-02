@@ -11,7 +11,7 @@ import {
 	MenuItem,
 } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+// import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
@@ -41,12 +41,12 @@ export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 				<ListItemText>{translateText('header.myProfile')}</ListItemText>
 			</MenuItem>
 
-			<MenuItem onClick={onClose}>
+			{/* <MenuItem onClick={onClose}>
 				<ListItemIcon>
 					<InfoOutlinedIcon fontSize='small' />
 				</ListItemIcon>
 				<ListItemText>{translateText('header.about')}</ListItemText>
-			</MenuItem>
+			</MenuItem> */}
 
 			<Divider sx={appHeaderStyles.userMenuDivider} />
 

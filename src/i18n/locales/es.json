@@ -12,6 +12,7 @@
 		"toggleTheme": "Cambiar tema",
 		"user": "Usuario",
 		"myProfile": "Mi perfil",
-		"logout": "Cerrar sesión"
+		"logout": "Cerrar sesión",
+		"create": "Crear"
 	}
 }
