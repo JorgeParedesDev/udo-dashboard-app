@@ -1,6 +1,6 @@
 /**
  * Archivo: LocalStorageDrawer.tsx
- * Propósito: Drawer lateral derecho para mostrar el Almecenamiento Local.
+ * Propósito: Drawer lateral derecho para mostrar el Almacenamiento Local.
  */
 
 import { Box, Drawer, IconButton, Typography, Divider } from '@mui/material';
