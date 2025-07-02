@@ -8,7 +8,7 @@ import { Box, Drawer, IconButton, Typography, Divider } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 
 type NotificationsDrawerProps = {
 	open: boolean;

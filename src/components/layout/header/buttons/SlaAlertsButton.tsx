@@ -6,8 +6,8 @@
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import WarningAmberOutlinedIcon from '@mui/icons-material/WarningAmberOutlined';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
 
 /**
  * Componente visual sin funcionalidad, representando alertas SLA de UDo.

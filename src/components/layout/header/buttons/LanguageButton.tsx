@@ -6,11 +6,10 @@
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
-import { useAnchorMenu } from '../../../hooks/useAnchorMenu';
-
-import { LanguageMenu } from './LanguageMenu';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
+import { useAnchorMenu } from '../../../../hooks/useAnchorMenu';
+import { LanguageMenu } from '../menus/LanguageMenu';
 
 /**
  * Componente exportado que muestra el botón para cambiar de idioma.

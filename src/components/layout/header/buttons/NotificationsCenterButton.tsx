@@ -7,10 +7,9 @@ import { useState } from 'react';
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
-
-import { NotificationsDrawer } from './NotificationsDrawer';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
+import { NotificationsDrawer } from '../drawers/NotificationsDrawer';
 
 /**
  * Componente que muestra el botón de notificaciones y el Drawer asociado.

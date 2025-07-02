@@ -6,11 +6,10 @@
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
-import { useAnchorMenu } from '../../../hooks/useAnchorMenu';
-
-import { AboutUdoMenu } from './AboutUdoMenu';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
+import { useAnchorMenu } from '../../../../hooks/useAnchorMenu';
+import { AboutUdoMenu } from '../menus/AboutUdoMenu';
 
 /**
  * Componente que representa el botón About y muestra un menú desplegable al hacer clic.

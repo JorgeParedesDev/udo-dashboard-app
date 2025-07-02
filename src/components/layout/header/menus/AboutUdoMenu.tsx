@@ -14,9 +14,9 @@ import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
-import type { AnchorMenuProps } from '../../../types/layout/menu';
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
+import type { AnchorMenuProps } from '../../../../types/layout/menu';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 
 /**
  * Componente exportado que representa el menú desplegable del botón About UDo.

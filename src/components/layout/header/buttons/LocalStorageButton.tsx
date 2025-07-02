@@ -6,8 +6,8 @@
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
 
 /**
  * Componente visual sin funcionalidad, representando almacenamiento local.

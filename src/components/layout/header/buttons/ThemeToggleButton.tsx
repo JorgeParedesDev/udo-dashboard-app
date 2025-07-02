@@ -7,9 +7,9 @@ import { IconButton, Tooltip } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
-import { useThemeMode } from '../../../config/useThemeMode';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
+import { useThemeMode } from '../../../../config/useThemeMode';
 
 /**
  * Botón funcional para alternar entre modo claro y oscuro.

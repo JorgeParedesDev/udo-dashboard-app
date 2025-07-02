@@ -7,14 +7,14 @@ import { Box } from '@mui/material';
 
 import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
 
-import { ThemeToggleButton } from './ThemeToggleButton';
-import { AboutUdoButton } from './AboutUdoButton';
-import { NotificationsCenterButton } from './NotificationsCenterButton';
-import { AlertsButton } from './AlertsButton';
-import { SlaAlertsButton } from './SlaAlertsButton';
-import { LocalStorageButton } from './LocalStorageButton';
-import { LanguageButton } from './LanguageButton';
-import { UserButton } from './UserButton';
+import { ThemeToggleButton } from './buttons/ThemeToggleButton';
+import { AboutUdoButton } from './buttons/AboutUdoButton';
+import { NotificationsCenterButton } from './buttons/NotificationsCenterButton';
+import { AlertsButton } from './buttons/AlertsButton';
+import { SlaAlertsButton } from './buttons/SlaAlertsButton';
+import { LocalStorageButton } from './buttons/LocalStorageButton';
+import { LanguageButton } from './buttons/LanguageButton';
+import { UserButton } from './buttons/UserButton';
 
 /**
  * Contenedor para los botones alineados a la derecha del AppHeader.

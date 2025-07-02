@@ -6,11 +6,10 @@
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
-import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
-import { appHeaderStyles } from '../../../styles/layout/app-header.styles';
-import { useAnchorMenu } from '../../../hooks/useAnchorMenu';
-
-import { UserMenu } from './UserMenu';
+import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
+import { useAnchorMenu } from '../../../../hooks/useAnchorMenu';
+import { UserMenu } from '../menus/UserMenu';
 
 /**
  * Componente que representa al usuario actual y muestra un menú desplegable al hacer clic.
