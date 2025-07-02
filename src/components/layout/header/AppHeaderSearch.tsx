@@ -18,9 +18,9 @@ export const AppHeaderSearch = () => {
 	const theme = useTheme();
 	const { translateText } = useTypedTranslation();
 
-       const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-               event.preventDefault();
-       };
+	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+	};
 
 	return (
 		<Paper
