@@ -16,11 +16,19 @@
 		"create": "Crear"
 	},
 	"notifications": {
-		"title": "Notificaciones",
-		"empty": "No hay notificaciones nuevas."
+		"title": "Centro de notificaciones",
+		"empty": "No hay notificaciones nuevas"
 	},
 	"alerts": {
 		"title": "Alertas",
 		"empty": "No hay alertas activas"
+	},
+	"slaAlerts": {
+		"title": "Alertas SLA",
+		"empty": "No hay alertas SLA activas"
+	},
+	"localStorage": {
+		"title": "Almacenamiento local",
+		"empty": "Sin almacenamiento local"
 	}
 }

@@ -1,9 +1,9 @@
 /**
- * Archivo: notifications-drawer.styles.ts
- * Propósito: Estilos del componente NotificationsDrawer.
+ * Archivo: app-drawer.style.ts
+ * Propósito: Estilos centralizados para el componente Drawer.
  */
 
-export const notificationsDrawerStyles = {
+export const drawerStyles = {
 	paper: {
 		width: 360,
 	},

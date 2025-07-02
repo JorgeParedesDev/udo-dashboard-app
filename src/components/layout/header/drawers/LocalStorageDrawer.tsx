@@ -1,17 +1,16 @@
 /**
- * Archivo: NotificationsDrawer.tsx
- * Ubicación: src/components/layout/header/drawers/
- * Propósito: Drawer lateral derecho para mostrar notificaciones.
+ * Archivo: LocalStorageDrawer.tsx
+ * Propósito: Drawer lateral derecho para mostrar el Almecenamiento Local.
  */
 
 import { Box, Drawer, IconButton, Typography, Divider } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
 
-export const NotificationsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
+export const LocalStorageDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (
@@ -24,9 +23,9 @@ export const NotificationsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 			}}>
 			<Box sx={drawerStyles.headerBox}>
 				<Box sx={drawerStyles.titleBox}>
-					<ChatOutlinedIcon />
+					<StorageOutlinedIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
-						{translateText('notifications.title')}
+						{translateText('localStorage.title')}
 					</Typography>
 				</Box>
 				<IconButton onClick={onClose}>
@@ -38,7 +37,7 @@ export const NotificationsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 
 			<Box sx={drawerStyles.contentBox}>
 				<Typography variant='body2' color='text.secondary'>
-					{translateText('notifications.empty')}
+					{translateText('localStorage.empty')}
 				</Typography>
 			</Box>
 		</Drawer>

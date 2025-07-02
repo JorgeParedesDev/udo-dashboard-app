@@ -1,6 +1,5 @@
 /**
  * Archivo: AlertsDrawer.tsx
- * Ubicación: src/components/layout/header/drawers/
  * Propósito: Drawer lateral derecho para mostrar alertas.
  */
 
@@ -9,7 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
-import { notificationsDrawerStyles } from '../../../../styles/layout/notifications-drawer.styles';
+import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
 
 export const AlertsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 	const { translateText } = useTypedTranslation();
@@ -20,10 +19,10 @@ export const AlertsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 			open={open}
 			onClose={onClose}
 			slotProps={{
-				paper: { sx: notificationsDrawerStyles.paper },
+				paper: { sx: drawerStyles.paper },
 			}}>
-			<Box sx={notificationsDrawerStyles.headerBox}>
-				<Box sx={notificationsDrawerStyles.titleBox}>
+			<Box sx={drawerStyles.headerBox}>
+				<Box sx={drawerStyles.titleBox}>
 					<NotificationsNoneOutlinedIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
 						{translateText('alerts.title')}
@@ -36,7 +35,7 @@ export const AlertsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 
 			<Divider />
 
-			<Box sx={notificationsDrawerStyles.contentBox}>
+			<Box sx={drawerStyles.contentBox}>
 				<Typography variant='body2' color='text.secondary'>
 					{translateText('alerts.empty')}
 				</Typography>
