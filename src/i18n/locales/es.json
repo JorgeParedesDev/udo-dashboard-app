@@ -18,5 +18,9 @@
 	"notifications": {
 		"title": "Notificaciones",
 		"empty": "No hay notificaciones nuevas."
+	},
+	"alerts": {
+		"title": "Alertas",
+		"empty": "No hay alertas activas"
 	}
 }
