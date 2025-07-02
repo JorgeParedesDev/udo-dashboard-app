@@ -3,13 +3,13 @@
  * Propósito: botón que despliega el panel lateral derecho de notificaciones.
  */
 
-import { useState } from 'react';
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
 import { NotificationsDrawer } from '../drawers/NotificationsDrawer';
+import { useDrawerToggle } from '../../../../hooks/useDrawerToggle';
 
 /**
  * Componente que muestra el botón de notificaciones y el Drawer asociado.
@@ -17,10 +17,7 @@ import { NotificationsDrawer } from '../drawers/NotificationsDrawer';
 export const NotificationsCenterButton = () => {
 	const { translateText } = useTypedTranslation();
 	const theme = useTheme();
-	const [open, setOpen] = useState(false);
-
-	const handleOpen = () => setOpen(true);
-	const handleClose = () => setOpen(false);
+	const { open, handleOpen, handleClose } = useDrawerToggle();
 
 	return (
 		<>

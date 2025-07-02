@@ -15,13 +15,16 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
-import type { AnchorMenuProps } from '../../../../types/layout/menu';
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 
 /**
  * Componente exportado que representa el menú desplegable del botón de usuario.
  */
-export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
+export const UserMenu = ({
+	anchorEl,
+	open,
+	onClose,
+}: Layout.AnchorMenuProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (

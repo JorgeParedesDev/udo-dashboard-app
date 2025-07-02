@@ -3,8 +3,10 @@
  * Propósito: Tipos reutilizables para menús visuales con anclaje.
  */
 
-export type AnchorMenuProps = {
-	anchorEl: HTMLElement | null;
-	open: boolean;
-	onClose: () => void;
-};
+declare namespace Layout {
+	export type AnchorMenuProps = {
+		anchorEl: HTMLElement | null;
+		open: boolean;
+		onClose: () => void;
+	};
+}

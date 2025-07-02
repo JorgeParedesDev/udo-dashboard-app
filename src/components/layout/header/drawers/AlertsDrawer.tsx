@@ -6,17 +6,12 @@
 
 import { Box, Drawer, IconButton, Typography, Divider } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import WarningAmberOutlinedIcon from '@mui/icons-material/WarningAmberOutlined';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { notificationsDrawerStyles } from '../../../../styles/layout/notifications-drawer.styles';
 
-type AlertsDrawerProps = {
-	open: boolean;
-	onClose: () => void;
-};
-
-export const AlertsDrawer = ({ open, onClose }: AlertsDrawerProps) => {
+export const AlertsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (
@@ -29,7 +24,7 @@ export const AlertsDrawer = ({ open, onClose }: AlertsDrawerProps) => {
 			}}>
 			<Box sx={notificationsDrawerStyles.headerBox}>
 				<Box sx={notificationsDrawerStyles.titleBox}>
-					<WarningAmberOutlinedIcon />
+					<NotificationsNoneOutlinedIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
 						{translateText('alerts.title')}
 					</Typography>

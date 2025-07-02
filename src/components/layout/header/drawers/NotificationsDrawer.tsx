@@ -11,15 +11,7 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { notificationsDrawerStyles } from '../../../../styles/layout/notifications-drawer.styles';
 
-type NotificationsDrawerProps = {
-	open: boolean;
-	onClose: () => void;
-};
-
-export const NotificationsDrawer = ({
-	open,
-	onClose,
-}: NotificationsDrawerProps) => {
+export const NotificationsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (
