@@ -1,6 +1,6 @@
 /**
  * Archivo: NotificationsDrawer.tsx
- * Ubicación: src/components/layout/header/
+ * Ubicación: src/components/layout/header/drawers/
  * Propósito: Drawer lateral derecho para mostrar notificaciones.
  */
 
@@ -9,6 +9,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import { notificationsDrawerStyles } from '../../../../styles/layout/notifications-drawer.styles';
 
 type NotificationsDrawerProps = {
 	open: boolean;
@@ -26,16 +27,11 @@ export const NotificationsDrawer = ({
 			anchor='right'
 			open={open}
 			onClose={onClose}
-			PaperProps={{
-				sx: { width: 360 },
+			slotProps={{
+				paper: { sx: notificationsDrawerStyles.paper },
 			}}>
-			<Box
-				display='flex'
-				alignItems='center'
-				justifyContent='space-between'
-				px={2}
-				py={1.5}>
-				<Box display='flex' alignItems='center' gap={1}>
+			<Box sx={notificationsDrawerStyles.headerBox}>
+				<Box sx={notificationsDrawerStyles.titleBox}>
 					<NotificationsNoneOutlinedIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
 						{translateText('notifications.title')}
@@ -48,7 +44,7 @@ export const NotificationsDrawer = ({
 
 			<Divider />
 
-			<Box px={2} py={2}>
+			<Box sx={notificationsDrawerStyles.contentBox}>
 				<Typography variant='body2' color='text.secondary'>
 					{translateText('notifications.empty')}
 				</Typography>
