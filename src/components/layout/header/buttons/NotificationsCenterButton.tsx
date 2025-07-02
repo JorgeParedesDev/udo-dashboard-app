@@ -8,7 +8,7 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
-import { LocalStorageDrawer } from '../drawers/LocalStorageDrawer';
+import { NotificationsDrawer } from '../drawers/NotificationsDrawer';
 import { useDrawerToggle } from '../../../../hooks/useDrawerToggle';
 
 /**
@@ -30,7 +30,7 @@ export const NotificationsCenterButton = () => {
 				</IconButton>
 			</Tooltip>
 
-			<LocalStorageDrawer open={open} onClose={handleClose} />
-		</>
-	);
+                        <NotificationsDrawer open={open} onClose={handleClose} />
+                </>
+        );
 };
