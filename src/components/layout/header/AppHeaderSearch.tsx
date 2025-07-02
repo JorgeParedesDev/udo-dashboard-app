@@ -6,6 +6,7 @@
 import { Paper, IconButton, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useTheme } from '@mui/material/styles';
+import type { FormEvent } from 'react';
 
 import { useTypedTranslation } from '../../../i18n/useTypedTranslation';
 import { appHeaderSearchStyles } from '../../../styles/layout/app-header-search.styles';
@@ -17,9 +18,9 @@ export const AppHeaderSearch = () => {
 	const theme = useTheme();
 	const { translateText } = useTypedTranslation();
 
-	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-	};
+       const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+               event.preventDefault();
+       };
 
 	return (
 		<Paper
