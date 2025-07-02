@@ -30,7 +30,7 @@ export const NotificationsCenterButton = () => {
 				</IconButton>
 			</Tooltip>
 
-                        <NotificationsDrawer open={open} onClose={handleClose} />
-                </>
-        );
+			<NotificationsDrawer open={open} onClose={handleClose} />
+		</>
+	);
 };
