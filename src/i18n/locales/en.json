@@ -14,5 +14,9 @@
 		"myProfile": "My profile",
 		"logout": "Logout",
 		"create": "Create"
+	},
+	"notifications": {
+		"title": "Notifications",
+		"empty": "No new notifications."
 	}
 }
