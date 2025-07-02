@@ -4,7 +4,8 @@
  * y los idiomas disponibles en la aplicación.
  */
 
-import type en from './en.json';
+// Importa las traducciones base para extraer las claves disponibles
+import type en from '../locales/en.json';
 
 type RecursiveKeyOf<TObj extends object> = {
 	[TKey in keyof TObj & string]: TObj[TKey] extends object
