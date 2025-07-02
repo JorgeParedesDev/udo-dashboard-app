@@ -14,11 +14,18 @@ import { appHeaderSearchStyles } from '../../../styles/layout/app-header-search.
  * Componente visual centrado entre logo e íconos. Sin funcionalidad.
  */
 export const AppHeaderSearch = () => {
-	const theme = useTheme();
-	const { translateText } = useTypedTranslation();
+        const theme = useTheme();
+        const { translateText } = useTypedTranslation();
+
+        const handleSubmit = (event: React.FormEvent<HTMLDivElement>) => {
+                event.preventDefault();
+        };
 
 	return (
-		<Paper component='form' sx={appHeaderSearchStyles.container(theme)}>
+                <Paper
+                        component='form'
+                        sx={appHeaderSearchStyles.container(theme)}
+                        onSubmit={handleSubmit}>
 			<InputBase
 				sx={appHeaderSearchStyles.input(theme)}
 				placeholder={translateText('header.search')}
