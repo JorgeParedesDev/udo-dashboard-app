@@ -13,6 +13,8 @@ import HoverMenu from 'material-ui-popup-state/HoverMenu';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { useRef } from 'react';
 
+import { appDrawerMenuStyles } from '../../../../../styles/layout/app-drawer-menu.styles';
+
 export const ServiceSubmenu = () => {
 	const popupState = usePopupState({
 		variant: 'popover',
@@ -61,13 +63,8 @@ export const ServiceSubmenu = () => {
 				disableRestoreFocus={disableRestoreFocus}
 				anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
 				transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
-				<Box
-					sx={{
-						display: 'grid',
-						gridTemplateColumns: 'repeat(3, 1fr)',
-						minWidth: 300,
-					}}>
-					{Array.from({ length: 12 }).map((_, index) => (
+				<Box sx={appDrawerMenuStyles.cascadingSubmenuPanel}>
+					{Array.from({ length: 40 }).map((_, index) => (
 						<MenuItem key={index} onClick={popupState.close}>
 							Item {index + 1}
 						</MenuItem>
