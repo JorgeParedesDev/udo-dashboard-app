@@ -23,4 +23,7 @@ export const drawerStyles = {
 		px: 2,
 		py: 2,
 	},
+	listItemIcon: {
+		minWidth: 32,
+	},
 };

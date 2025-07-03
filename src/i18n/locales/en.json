@@ -30,5 +30,13 @@
 	"localStorage": {
 		"title": "Local Storage",
 		"empty": "No local storage"
+	},
+	"menu": {
+		"title": "Menu",
+		"serviceAdministration": "Service Administration",
+		"csvReportManager": "CSV Report Manager",
+		"udoDocumentation": "UDo Documentation",
+		"leadersAdministration": "Leaders Administration",
+		"serviceCalendarsSlas": "Service Calendars & SLAs"
 	}
 }
