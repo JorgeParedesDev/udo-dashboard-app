@@ -1,0 +1,62 @@
+/**
+ * Archivo: LeadersAdministrationMenu.tsx
+ * Propósito: Menú flotante para la sección "Leaders Administration" en el MenuDrawer.
+ */
+
+import { MenuItem } from '@mui/material';
+import HoverMenu from 'material-ui-popup-state/HoverMenu';
+import { bindMenu } from 'material-ui-popup-state/hooks';
+import type { PopupState } from 'material-ui-popup-state/hooks';
+
+import { useTypedTranslation } from '../../../../../i18n/useTypedTranslation';
+
+interface Props {
+	popupState: PopupState;
+}
+
+export const LeadersAdministrationMenu = ({ popupState }: Props) => {
+	const { translateText } = useTypedTranslation();
+
+	const {
+		id,
+		anchorEl,
+		anchorPosition,
+		anchorReference,
+		open,
+		onClose,
+		onMouseLeave,
+		autoFocus,
+		disableAutoFocusItem,
+		disableAutoFocus,
+		disableEnforceFocus,
+		disableRestoreFocus,
+	} = bindMenu(popupState);
+
+	return (
+		<HoverMenu
+			id={id}
+			anchorEl={anchorEl}
+			anchorPosition={anchorPosition}
+			anchorReference={anchorReference}
+			open={open}
+			onClose={onClose}
+			onMouseLeave={onMouseLeave}
+			autoFocus={autoFocus}
+			disableAutoFocusItem={disableAutoFocusItem}
+			disableAutoFocus={disableAutoFocus}
+			disableEnforceFocus={disableEnforceFocus}
+			disableRestoreFocus={disableRestoreFocus}
+			anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+			transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
+			<MenuItem onClick={popupState.close}>
+				{translateText('menu.group')}
+			</MenuItem>
+			<MenuItem onClick={popupState.close}>
+				{translateText('menu.userCreation')}
+			</MenuItem>
+			<MenuItem onClick={popupState.close}>
+				{translateText('menu.users')}
+			</MenuItem>
+		</HoverMenu>
+	);
+};
