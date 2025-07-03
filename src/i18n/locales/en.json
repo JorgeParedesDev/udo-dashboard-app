@@ -32,8 +32,11 @@
 		"empty": "No local storage"
 	},
 	"menu": {
-		"title": "Menu",
+		"title": "Main Menu",
 		"serviceAdministration": "Service Administration",
+		"service": "Service",
+		"scenario": "Scenario",
+		"createNewService": "Create new service",
 		"csvReportManager": "CSV Report Manager",
 		"udoDocumentation": "UDo Documentation",
 		"leadersAdministration": "Leaders Administration",

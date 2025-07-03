@@ -34,6 +34,9 @@
 	"menu": {
 		"title": "Menú",
 		"serviceAdministration": "Administración de Servicio",
+		"service": "Servicio",
+		"scenario": "Escenario",
+		"createNewService": "Crear Nuevo Servicio",
 		"csvReportManager": "Administrador de informes CSV",
 		"udoDocumentation": "Documentación de UDo",
 		"leadersAdministration": "Administración de líderes",
