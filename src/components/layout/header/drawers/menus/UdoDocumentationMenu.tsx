@@ -5,10 +5,10 @@
 
 import { MenuItem } from '@mui/material';
 import HoverMenu from 'material-ui-popup-state/HoverMenu';
-import { bindMenu } from 'material-ui-popup-state/hooks';
 import type { PopupState } from 'material-ui-popup-state/hooks';
 
 import { useTypedTranslation } from '../../../../../i18n/useTypedTranslation';
+import { useBoundHoverMenu } from '../../../../../hooks/useBoundHoverMenu';
 
 interface Props {
 	popupState: PopupState;
@@ -16,7 +16,6 @@ interface Props {
 
 export const UdoDocumentationMenu = ({ popupState }: Props) => {
 	const { translateText } = useTypedTranslation();
-
 	const {
 		id,
 		anchorEl,
@@ -30,7 +29,7 @@ export const UdoDocumentationMenu = ({ popupState }: Props) => {
 		disableAutoFocus,
 		disableEnforceFocus,
 		disableRestoreFocus,
-	} = bindMenu(popupState);
+	} = useBoundHoverMenu(popupState);
 
 	return (
 		<HoverMenu
