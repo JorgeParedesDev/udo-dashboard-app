@@ -39,6 +39,8 @@
 		"createNewService": "Crear Nuevo Servicio",
 		"csvReportManager": "Administrador de informes CSV",
 		"udoDocumentation": "Documentación de UDo",
+		"documentation": "Documentación",
+		"templates": "Plantillas",
 		"leadersAdministration": "Administración de líderes",
 		"serviceCalendarsSlas": "Calendarios de Servicios y SLAs"
 	}

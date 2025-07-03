@@ -1,6 +1,6 @@
 /**
  * Archivo: MenuDrawer.tsx
- * Propósito: Drawer lateral izquierdo con submenu flotante usando material-ui-popup-state, sin prop spreading y correctamente tipado.
+ * Propósito: Drawer lateral izquierdo con submenús flotantes usando material-ui-popup-state, sin prop spreading.
  */
 
 import {
@@ -35,29 +35,49 @@ import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
 export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
-	const popupState = usePopupState({
+	// Service Administration submenu
+	const servicePopup = usePopupState({
 		variant: 'popover',
 		popupId: 'service-submenu',
 	});
-
-	// bindHover props (solo disponibles estas dos)
-	const { onMouseOver, onMouseLeave } = bindHover(popupState);
-
-	// bindMenu props
+	const { onMouseOver: serviceOver, onMouseLeave: serviceLeave } =
+		bindHover(servicePopup);
 	const {
-		id,
-		anchorEl,
-		anchorPosition,
-		anchorReference,
-		open: menuOpen,
-		onClose: menuOnClose,
-		onMouseLeave: menuOnMouseLeave,
-		autoFocus,
-		disableAutoFocusItem,
-		disableAutoFocus,
-		disableEnforceFocus,
-		disableRestoreFocus,
-	} = bindMenu(popupState);
+		id: serviceId,
+		anchorEl: serviceAnchor,
+		anchorPosition: servicePos,
+		anchorReference: serviceRef,
+		open: serviceOpen,
+		onClose: serviceClose,
+		onMouseLeave: serviceMenuLeave,
+		autoFocus: serviceAF,
+		disableAutoFocusItem: serviceDAFI,
+		disableAutoFocus: serviceDAF,
+		disableEnforceFocus: serviceDEF,
+		disableRestoreFocus: serviceDRF,
+	} = bindMenu(servicePopup);
+
+	// UDo Documentation submenu
+	const docPopup = usePopupState({
+		variant: 'popover',
+		popupId: 'documentation-submenu',
+	});
+	const { onMouseOver: docOver, onMouseLeave: docLeave } =
+		bindHover(docPopup);
+	const {
+		id: docId,
+		anchorEl: docAnchor,
+		anchorPosition: docPos,
+		anchorReference: docRef,
+		open: docOpen,
+		onClose: docClose,
+		onMouseLeave: docMenuLeave,
+		autoFocus: docAF,
+		disableAutoFocusItem: docDAFI,
+		disableAutoFocus: docDAF,
+		disableEnforceFocus: docDEF,
+		disableRestoreFocus: docDRF,
+	} = bindMenu(docPopup);
 
 	return (
 		<Drawer anchor='left' open={open} onClose={onClose}>
@@ -76,10 +96,10 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 			<Divider />
 
 			<List>
-				{/* Service Administration with submenu */}
+				{/* Service Administration */}
 				<ListItemButton
-					onMouseOver={onMouseOver}
-					onMouseLeave={onMouseLeave}>
+					onMouseOver={serviceOver}
+					onMouseLeave={serviceLeave}>
 					<ListItemIcon sx={drawerStyles.listItemIcon}>
 						<HandymanIcon />
 					</ListItemIcon>
@@ -89,32 +109,32 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 				</ListItemButton>
 
 				<HoverMenu
-					id={id}
-					anchorEl={anchorEl}
-					anchorPosition={anchorPosition}
-					anchorReference={anchorReference}
-					open={menuOpen}
-					onClose={menuOnClose}
-					onMouseLeave={menuOnMouseLeave}
-					autoFocus={autoFocus}
-					disableAutoFocusItem={disableAutoFocusItem}
-					disableAutoFocus={disableAutoFocus}
-					disableEnforceFocus={disableEnforceFocus}
-					disableRestoreFocus={disableRestoreFocus}
+					id={serviceId}
+					anchorEl={serviceAnchor}
+					anchorPosition={servicePos}
+					anchorReference={serviceRef}
+					open={serviceOpen}
+					onClose={serviceClose}
+					onMouseLeave={serviceMenuLeave}
+					autoFocus={serviceAF}
+					disableAutoFocusItem={serviceDAFI}
+					disableAutoFocus={serviceDAF}
+					disableEnforceFocus={serviceDEF}
+					disableRestoreFocus={serviceDRF}
 					anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
 					transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
-					<MenuItem onClick={popupState.close}>
+					<MenuItem onClick={servicePopup.close}>
 						{translateText('menu.service')}
 					</MenuItem>
-					<MenuItem onClick={popupState.close}>
+					<MenuItem onClick={servicePopup.close}>
 						{translateText('menu.scenario')}
 					</MenuItem>
-					<MenuItem onClick={popupState.close}>
+					<MenuItem onClick={servicePopup.close}>
 						{translateText('menu.createNewService')}
 					</MenuItem>
 				</HoverMenu>
 
-				{/* Otros ítems simples */}
+				{/* CSV Report Manager */}
 				<ListItemButton>
 					<ListItemIcon sx={drawerStyles.listItemIcon}>
 						<DescriptionIcon />
@@ -124,7 +144,8 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 					</ListItemText>
 				</ListItemButton>
 
-				<ListItemButton>
+				{/* UDo Documentation */}
+				<ListItemButton onMouseOver={docOver} onMouseLeave={docLeave}>
 					<ListItemIcon sx={drawerStyles.listItemIcon}>
 						<MenuBookIcon />
 					</ListItemIcon>
@@ -133,6 +154,30 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 					</ListItemText>
 				</ListItemButton>
 
+				<HoverMenu
+					id={docId}
+					anchorEl={docAnchor}
+					anchorPosition={docPos}
+					anchorReference={docRef}
+					open={docOpen}
+					onClose={docClose}
+					onMouseLeave={docMenuLeave}
+					autoFocus={docAF}
+					disableAutoFocusItem={docDAFI}
+					disableAutoFocus={docDAF}
+					disableEnforceFocus={docDEF}
+					disableRestoreFocus={docDRF}
+					anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+					transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
+					<MenuItem onClick={docPopup.close}>
+						{translateText('menu.documentation')}
+					</MenuItem>
+					<MenuItem onClick={docPopup.close}>
+						{translateText('menu.templates')}
+					</MenuItem>
+				</HoverMenu>
+
+				{/* Leaders Administration */}
 				<ListItemButton>
 					<ListItemIcon sx={drawerStyles.listItemIcon}>
 						<GroupsIcon />
@@ -142,6 +187,7 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 					</ListItemText>
 				</ListItemButton>
 
+				{/* Service Calendars & SLAs */}
 				<ListItemButton>
 					<ListItemIcon sx={drawerStyles.listItemIcon}>
 						<CalendarMonthIcon />
