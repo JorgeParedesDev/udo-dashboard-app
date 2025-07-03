@@ -10,7 +10,7 @@ import type { PopupState } from 'material-ui-popup-state/hooks';
 
 import { useTypedTranslation } from '../../../../../i18n/useTypedTranslation';
 
-import { ServiceSubmenuMenu } from './ServiceSubmenuMenu';
+import { ServiceSubmenu } from './ServiceSubmenu';
 
 interface Props {
 	popupState: PopupState;
@@ -50,7 +50,7 @@ export const ServiceAdministrationMenu = ({ popupState }: Props) => {
 			disableRestoreFocus={disableRestoreFocus}
 			anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
-			<ServiceSubmenuMenu />
+			<ServiceSubmenu />
 			<MenuItem onClick={popupState.close}>
 				{translateText('menu.scenario')}
 			</MenuItem>

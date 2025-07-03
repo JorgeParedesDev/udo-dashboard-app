@@ -1,5 +1,5 @@
 /**
- * Archivo: ServiceSubmenuMenu.tsx
+ * Archivo: ServiceSubmenu.tsx
  * Propósito: Submenú flotante tipo cascada desde el item "Service", con items organizados en columnas.
  */
 
@@ -13,7 +13,7 @@ import HoverMenu from 'material-ui-popup-state/HoverMenu';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { useRef } from 'react';
 
-export const ServiceSubmenuMenu = () => {
+export const ServiceSubmenu = () => {
 	const popupState = usePopupState({
 		variant: 'popover',
 		popupId: 'service-submenu-grid',
@@ -64,10 +64,10 @@ export const ServiceSubmenuMenu = () => {
 				<Box
 					sx={{
 						display: 'grid',
-						gridTemplateColumns: 'repeat(4, 1fr)',
+						gridTemplateColumns: 'repeat(3, 1fr)',
 						minWidth: 300,
 					}}>
-					{Array.from({ length: 40 }).map((_, index) => (
+					{Array.from({ length: 12 }).map((_, index) => (
 						<MenuItem key={index} onClick={popupState.close}>
 							Item {index + 1}
 						</MenuItem>
