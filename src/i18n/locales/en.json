@@ -40,8 +40,11 @@
 		"csvReportManager": "CSV Report Manager",
 		"udoDocumentation": "UDo Documentation",
 		"documentation": "Documentation",
-		"templates": "templates",
+		"templates": "Templates",
 		"leadersAdministration": "Leaders Administration",
+		"group": "Group",
+		"userCreation": "User creation",
+		"users": "Users",
 		"serviceCalendarsSlas": "Service Calendars & SLAs"
 	}
 }

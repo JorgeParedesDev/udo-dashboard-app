@@ -42,6 +42,9 @@
 		"documentation": "Documentación",
 		"templates": "Plantillas",
 		"leadersAdministration": "Administración de líderes",
+		"group": "Grupo",
+		"userCreation": "Nuevo usuario",
+		"users": "Usuarios",
 		"serviceCalendarsSlas": "Calendarios de Servicios y SLAs"
 	}
 }

@@ -35,7 +35,7 @@ import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
 export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
-	// Service Administration submenu
+	// Service Administration
 	const servicePopup = usePopupState({
 		variant: 'popover',
 		popupId: 'service-submenu',
@@ -57,7 +57,7 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 		disableRestoreFocus: serviceDRF,
 	} = bindMenu(servicePopup);
 
-	// UDo Documentation submenu
+	// UDo Documentation
 	const docPopup = usePopupState({
 		variant: 'popover',
 		popupId: 'documentation-submenu',
@@ -78,6 +78,28 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 		disableEnforceFocus: docDEF,
 		disableRestoreFocus: docDRF,
 	} = bindMenu(docPopup);
+
+	// Leaders Administration
+	const leadersPopup = usePopupState({
+		variant: 'popover',
+		popupId: 'leaders-submenu',
+	});
+	const { onMouseOver: leadersOver, onMouseLeave: leadersLeave } =
+		bindHover(leadersPopup);
+	const {
+		id: leadersId,
+		anchorEl: leadersAnchor,
+		anchorPosition: leadersPos,
+		anchorReference: leadersRef,
+		open: leadersOpen,
+		onClose: leadersClose,
+		onMouseLeave: leadersMenuLeave,
+		autoFocus: leadersAF,
+		disableAutoFocusItem: leadersDAFI,
+		disableAutoFocus: leadersDAF,
+		disableEnforceFocus: leadersDEF,
+		disableRestoreFocus: leadersDRF,
+	} = bindMenu(leadersPopup);
 
 	return (
 		<Drawer anchor='left' open={open} onClose={onClose}>
@@ -178,7 +200,9 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 				</HoverMenu>
 
 				{/* Leaders Administration */}
-				<ListItemButton>
+				<ListItemButton
+					onMouseOver={leadersOver}
+					onMouseLeave={leadersLeave}>
 					<ListItemIcon sx={drawerStyles.listItemIcon}>
 						<GroupsIcon />
 					</ListItemIcon>
@@ -186,6 +210,32 @@ export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
 						{translateText('menu.leadersAdministration')}
 					</ListItemText>
 				</ListItemButton>
+
+				<HoverMenu
+					id={leadersId}
+					anchorEl={leadersAnchor}
+					anchorPosition={leadersPos}
+					anchorReference={leadersRef}
+					open={leadersOpen}
+					onClose={leadersClose}
+					onMouseLeave={leadersMenuLeave}
+					autoFocus={leadersAF}
+					disableAutoFocusItem={leadersDAFI}
+					disableAutoFocus={leadersDAF}
+					disableEnforceFocus={leadersDEF}
+					disableRestoreFocus={leadersDRF}
+					anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+					transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
+					<MenuItem onClick={leadersPopup.close}>
+						{translateText('menu.group')}
+					</MenuItem>
+					<MenuItem onClick={leadersPopup.close}>
+						{translateText('menu.userCreation')}
+					</MenuItem>
+					<MenuItem onClick={leadersPopup.close}>
+						{translateText('menu.users')}
+					</MenuItem>
+				</HoverMenu>
 
 				{/* Service Calendars & SLAs */}
 				<ListItemButton>
