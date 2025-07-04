@@ -11,6 +11,7 @@ import { useBoundHoverMenu } from '../../../../../hooks/useBoundHoverMenu';
 import type { DrawerMenuProps } from '../../../../../types/layout/menu';
 
 import { ServiceSubmenu } from './ServiceSubmenu';
+import { ScenarioSubmenu } from './ScenarioSubmenu';
 
 export const ServiceAdministrationMenu = ({ popupState }: DrawerMenuProps) => {
 	const { translateText } = useTypedTranslation();
@@ -46,9 +47,7 @@ export const ServiceAdministrationMenu = ({ popupState }: DrawerMenuProps) => {
 			anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
 			<ServiceSubmenu />
-			<MenuItem onClick={popupState.close}>
-				{translateText('menu.scenario')}
-			</MenuItem>
+			<ScenarioSubmenu />
 			<MenuItem onClick={popupState.close}>
 				{translateText('menu.createNewService')}
 			</MenuItem>

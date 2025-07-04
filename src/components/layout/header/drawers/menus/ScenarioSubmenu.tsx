@@ -1,6 +1,6 @@
 /**
- * Archivo: ServiceSubmenu.tsx
- * Propósito: Submenú flotante tipo cascada desde el item "Service", con items organizados en columnas.
+ * Archivo: ScenarioSubmenu.tsx
+ * Propósito: Submenú flotante tipo cascada desde el item "Scenario", con items organizados en columnas.
  */
 
 import { Box, MenuItem, ListItemText } from '@mui/material';
@@ -16,11 +16,11 @@ import { useRef } from 'react';
 import { appDrawerMenuStyles } from '../../../../../styles/layout/app-drawer-menu.styles';
 import { useTypedTranslation } from '../../../../../i18n/useTypedTranslation';
 
-export const ServiceSubmenu = () => {
+export const ScenarioSubmenu = () => {
 	const { translateText } = useTypedTranslation();
 	const popupState = usePopupState({
 		variant: 'popover',
-		popupId: 'service-submenu-grid',
+		popupId: 'scenario-submenu-grid',
 	});
 	const { onMouseOver, onMouseLeave } = bindHover(popupState);
 	const {
@@ -46,7 +46,7 @@ export const ServiceSubmenu = () => {
 				ref={anchorRef}
 				onMouseOver={onMouseOver}
 				onMouseLeave={onMouseLeave}>
-				<ListItemText>{translateText('menu.service')}</ListItemText>
+				<ListItemText>{translateText('menu.scenario')}</ListItemText>
 				<ArrowRightIcon fontSize='small' />
 			</MenuItem>
 
@@ -68,7 +68,7 @@ export const ServiceSubmenu = () => {
 				<Box sx={appDrawerMenuStyles.cascadingSubmenuPanel}>
 					{Array.from({ length: 40 }).map((_, index) => (
 						<MenuItem key={index} onClick={popupState.close}>
-							{`${translateText('menu.service')} ${index + 1}`}
+							{`${translateText('menu.scenario')} ${index + 1}`}
 						</MenuItem>
 					))}
 				</Box>
