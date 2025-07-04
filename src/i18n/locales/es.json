@@ -45,6 +45,7 @@
 		"group": "Grupo",
 		"userCreation": "Nuevo usuario",
 		"users": "Usuarios",
-		"serviceCalendarsSlas": "Calendarios de Servicios y SLAs"
+		"serviceCalendarsSlas": "Calendarios de Servicios y SLAs",
+		"calendar": "Calendario"
 	}
 }

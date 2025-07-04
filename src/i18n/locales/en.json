@@ -45,6 +45,7 @@
 		"group": "Group",
 		"userCreation": "User creation",
 		"users": "Users",
-		"serviceCalendarsSlas": "Service Calendars & SLAs"
+		"serviceCalendarsSlas": "Service Calendars & SLAs",
+		"calendar": "Calendar"
 	}
 }

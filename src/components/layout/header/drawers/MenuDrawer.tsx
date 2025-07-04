@@ -30,6 +30,7 @@ import type { DrawerProps } from '../../../../types/layout/drawers';
 import { ServiceAdministrationMenu } from './menus/ServiceAdministrationMenu';
 import { UdoDocumentationMenu } from './menus/UdoDocumentationMenu';
 import { LeadersAdministrationMenu } from './menus/LeadersAdministrationMenu';
+import { CalendarsSubmenu } from './menus/CalendarsSubmenu';
 
 export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 	const { translateText } = useTypedTranslation();
@@ -47,6 +48,10 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 		variant: 'popover',
 		popupId: 'leaders-submenu',
 	});
+	const calendarsPopup = usePopupState({
+		variant: 'popover',
+		popupId: 'calendars-submenu',
+	});
 
 	const { onMouseOver: serviceOver, onMouseLeave: serviceLeave } =
 		bindHover(servicePopup);
@@ -54,6 +59,8 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 		bindHover(docPopup);
 	const { onMouseOver: leadersOver, onMouseLeave: leadersLeave } =
 		bindHover(leadersPopup);
+	const { onMouseOver: calendarsOver, onMouseLeave: calendarsLeave } =
+		bindHover(calendarsPopup);
 
 	return (
 		<Drawer anchor='left' open={open} onClose={onClose}>
@@ -120,7 +127,9 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 				<LeadersAdministrationMenu popupState={leadersPopup} />
 
 				{/* Service Calendars & SLAs */}
-				<ListItemButton>
+				<ListItemButton
+					onMouseOver={calendarsOver}
+					onMouseLeave={calendarsLeave}>
 					<ListItemIcon sx={drawerStyles.listItemIcon}>
 						<CalendarMonthIcon />
 					</ListItemIcon>
@@ -128,6 +137,7 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 						{translateText('menu.serviceCalendarsSlas')}
 					</ListItemText>
 				</ListItemButton>
+				<CalendarsSubmenu popupState={calendarsPopup} />
 			</List>
 		</Drawer>
 	);
