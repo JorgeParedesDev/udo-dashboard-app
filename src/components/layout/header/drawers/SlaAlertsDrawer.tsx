@@ -9,8 +9,9 @@ import WarningAmberOutlinedIcon from '@mui/icons-material/WarningAmberOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
+import type { DrawerProps } from '../../../../types/layout/drawers';
 
-export const SlaAlertsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
+export const SlaAlertsDrawer = ({ open, onClose }: DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (

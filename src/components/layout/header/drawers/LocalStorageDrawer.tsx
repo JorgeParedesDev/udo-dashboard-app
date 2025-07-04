@@ -9,8 +9,9 @@ import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
+import type { DrawerProps } from '../../../../types/layout/drawers';
 
-export const LocalStorageDrawer = ({ open, onClose }: Layout.DrawerProps) => {
+export const LocalStorageDrawer = ({ open, onClose }: DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (

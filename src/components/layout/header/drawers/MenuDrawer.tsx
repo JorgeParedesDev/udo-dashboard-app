@@ -25,12 +25,13 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
+import type { DrawerProps } from '../../../../types/layout/drawers';
 
 import { ServiceAdministrationMenu } from './menus/ServiceAdministrationMenu';
 import { UdoDocumentationMenu } from './menus/UdoDocumentationMenu';
 import { LeadersAdministrationMenu } from './menus/LeadersAdministrationMenu';
 
-export const MenuDrawer = ({ open, onClose }: Layout.DrawerProps) => {
+export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
 	// Submenu popups

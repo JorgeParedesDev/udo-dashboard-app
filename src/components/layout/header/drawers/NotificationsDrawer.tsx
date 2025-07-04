@@ -10,8 +10,9 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
 import { drawerStyles } from '../../../../styles/layout/app-drawer.style';
+import type { DrawerProps } from '../../../../types/layout/drawers';
 
-export const NotificationsDrawer = ({ open, onClose }: Layout.DrawerProps) => {
+export const NotificationsDrawer = ({ open, onClose }: DrawerProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (
