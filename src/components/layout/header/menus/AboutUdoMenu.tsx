@@ -16,15 +16,12 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
 import { useTypedTranslation } from '../../../../i18n/useTypedTranslation';
+import type { AnchorMenuProps } from '../../../../types/layout/menu';
 
 /**
  * Componente exportado que representa el menú desplegable del botón About UDo.
  */
-export const AboutUdoMenu = ({
-	anchorEl,
-	open,
-	onClose,
-}: Layout.AnchorMenuProps) => {
+export const AboutUdoMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 	const { translateText } = useTypedTranslation();
 
 	return (

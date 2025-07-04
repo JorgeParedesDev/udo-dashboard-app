@@ -10,16 +10,13 @@ import CheckIcon from '@mui/icons-material/Check';
 import { i18n } from '../../../../i18n/i18n';
 import { availableLanguages } from '../../../../i18n/languages';
 import { appHeaderStyles } from '../../../../styles/layout/app-header.styles';
+import type { AnchorMenuProps } from '../../../../types/layout/menu';
 
 /**
  * Componente exportado que muestra el menú de selección de idioma.
  */
 
-export const LanguageMenu = ({
-	anchorEl,
-	open,
-	onClose,
-}: Layout.AnchorMenuProps) => {
+export const LanguageMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 	const currentLanguage = i18n.language;
 
 	const handleSelectLanguage = async (code: string) => {

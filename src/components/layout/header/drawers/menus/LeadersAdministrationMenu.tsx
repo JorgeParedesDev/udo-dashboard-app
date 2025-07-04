@@ -5,16 +5,12 @@
 
 import { MenuItem } from '@mui/material';
 import HoverMenu from 'material-ui-popup-state/HoverMenu';
-import type { PopupState } from 'material-ui-popup-state/hooks';
 
 import { useTypedTranslation } from '../../../../../i18n/useTypedTranslation';
 import { useBoundHoverMenu } from '../../../../../hooks/useBoundHoverMenu';
+import type { DrawerMenuProps } from '../../../../../types/layout/menu';
 
-interface Props {
-	popupState: PopupState;
-}
-
-export const LeadersAdministrationMenu = ({ popupState }: Props) => {
+export const LeadersAdministrationMenu = ({ popupState }: DrawerMenuProps) => {
 	const { translateText } = useTypedTranslation();
 	const {
 		id,
