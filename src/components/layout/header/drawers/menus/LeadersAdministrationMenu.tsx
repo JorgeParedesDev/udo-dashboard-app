@@ -10,6 +10,8 @@ import { useTypedTranslation } from '../../../../../i18n/useTypedTranslation';
 import { useBoundHoverMenu } from '../../../../../hooks/useBoundHoverMenu';
 import type { DrawerMenuProps } from '../../../../../types/layout/menu';
 
+import { GroupSubmenu } from './GroupSubmenu';
+
 export const LeadersAdministrationMenu = ({ popupState }: DrawerMenuProps) => {
 	const { translateText } = useTypedTranslation();
 	const {
@@ -43,9 +45,7 @@ export const LeadersAdministrationMenu = ({ popupState }: DrawerMenuProps) => {
 			disableRestoreFocus={disableRestoreFocus}
 			anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
-			<MenuItem onClick={popupState.close}>
-				{translateText('menu.group')}
-			</MenuItem>
+			<GroupSubmenu />
 			<MenuItem onClick={popupState.close}>
 				{translateText('menu.userCreation')}
 			</MenuItem>
