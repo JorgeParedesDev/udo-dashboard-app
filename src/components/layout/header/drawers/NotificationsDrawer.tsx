@@ -27,7 +27,7 @@ export const NotificationsDrawer = ({ open, onClose }: DrawerProps) => {
 				<Box sx={drawerStyles.titleBox}>
 					<ChatOutlinedIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
-						{translateText('notifications.title')}
+						{translateText('Notifications')}
 					</Typography>
 				</Box>
 				<IconButton onClick={onClose}>
@@ -39,7 +39,7 @@ export const NotificationsDrawer = ({ open, onClose }: DrawerProps) => {
 
 			<Box sx={drawerStyles.contentBox}>
 				<Typography variant='body2' color='text.secondary'>
-					{translateText('notifications.empty')}
+					{translateText('No new notifications')}
 				</Typography>
 			</Box>
 		</Drawer>

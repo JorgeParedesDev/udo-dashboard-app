@@ -46,7 +46,7 @@ export const ServiceSubmenu = () => {
 				ref={anchorRef}
 				onMouseOver={onMouseOver}
 				onMouseLeave={onMouseLeave}>
-				<ListItemText>{translateText('menu.service')}</ListItemText>
+				<ListItemText>{translateText('Service')}</ListItemText>
 				<ArrowRightIcon fontSize='small' />
 			</MenuItem>
 
@@ -68,7 +68,7 @@ export const ServiceSubmenu = () => {
 				<Box sx={appDrawerMenuStyles.cascadingSubmenuPanel}>
 					{Array.from({ length: 40 }).map((_, index) => (
 						<MenuItem key={index} onClick={popupState.close}>
-							{`${translateText('menu.service')} ${index + 1}`}
+							{`${translateText('Service')} ${index + 1}`}
 						</MenuItem>
 					))}
 				</Box>

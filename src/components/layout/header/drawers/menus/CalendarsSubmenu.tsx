@@ -48,7 +48,7 @@ export const CalendarsSubmenu = ({ popupState }: DrawerMenuProps) => {
 			<Box sx={appDrawerMenuStyles.cascadingSubmenuPanel}>
 				{Array.from({ length: 40 }).map((_, index) => (
 					<MenuItem key={index} onClick={popupState.close}>
-						{`${translateText('menu.calendar')} ${index + 1}`}
+						{`${translateText('Calendar')} ${index + 1}`}
 					</MenuItem>
 				))}
 			</Box>

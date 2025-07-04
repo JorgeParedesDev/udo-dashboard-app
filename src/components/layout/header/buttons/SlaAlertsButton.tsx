@@ -21,11 +21,11 @@ export const SlaAlertsButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.slaAlerts')}>
+			<Tooltip title={translateText('SLA Alerts')}>
 				<IconButton
 					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}
-					aria-label={translateText('header.slaAlerts')}>
+					aria-label={translateText('SLA Alerts')}>
 					<WarningAmberOutlinedIcon />
 				</IconButton>
 			</Tooltip>

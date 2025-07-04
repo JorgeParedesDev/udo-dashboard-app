@@ -68,7 +68,7 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 				<Box sx={drawerStyles.titleBox}>
 					<MenuIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
-						{translateText('menu.title')}
+						{translateText('Main Menu')}
 					</Typography>
 				</Box>
 				<IconButton onClick={onClose}>
@@ -87,7 +87,7 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 						<HandymanIcon />
 					</ListItemIcon>
 					<ListItemText>
-						{translateText('menu.serviceAdministration')}
+						{translateText('Service Administration')}
 					</ListItemText>
 				</ListItemButton>
 				<ServiceAdministrationMenu popupState={servicePopup} />
@@ -98,7 +98,7 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 						<DescriptionIcon />
 					</ListItemIcon>
 					<ListItemText>
-						{translateText('menu.csvReportManager')}
+						{translateText('CSV Report Manager')}
 					</ListItemText>
 				</ListItemButton>
 
@@ -108,7 +108,7 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 						<MenuBookIcon />
 					</ListItemIcon>
 					<ListItemText>
-						{translateText('menu.udoDocumentation')}
+						{translateText('UDo Documentation')}
 					</ListItemText>
 				</ListItemButton>
 				<UdoDocumentationMenu popupState={docPopup} />
@@ -121,7 +121,7 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 						<GroupsIcon />
 					</ListItemIcon>
 					<ListItemText>
-						{translateText('menu.leadersAdministration')}
+						{translateText('Leaders Administration')}
 					</ListItemText>
 				</ListItemButton>
 				<LeadersAdministrationMenu popupState={leadersPopup} />
@@ -134,7 +134,7 @@ export const MenuDrawer = ({ open, onClose }: DrawerProps) => {
 						<CalendarMonthIcon />
 					</ListItemIcon>
 					<ListItemText>
-						{translateText('menu.serviceCalendarsSlas')}
+						{translateText('Service Calendars & SLAs')}
 					</ListItemText>
 				</ListItemButton>
 				<CalendarsSubmenu popupState={calendarsPopup} />

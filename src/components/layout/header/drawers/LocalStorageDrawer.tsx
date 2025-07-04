@@ -26,7 +26,7 @@ export const LocalStorageDrawer = ({ open, onClose }: DrawerProps) => {
 				<Box sx={drawerStyles.titleBox}>
 					<StorageOutlinedIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
-						{translateText('localStorage.title')}
+						{translateText('Local Storage')}
 					</Typography>
 				</Box>
 				<IconButton onClick={onClose}>
@@ -38,7 +38,7 @@ export const LocalStorageDrawer = ({ open, onClose }: DrawerProps) => {
 
 			<Box sx={drawerStyles.contentBox}>
 				<Typography variant='body2' color='text.secondary'>
-					{translateText('localStorage.empty')}
+					{translateText('No local storage')}
 				</Typography>
 			</Box>
 		</Drawer>

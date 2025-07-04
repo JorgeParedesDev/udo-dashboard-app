@@ -38,7 +38,7 @@ export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 				<ListItemIcon>
 					<AccountCircleIcon fontSize='small' />
 				</ListItemIcon>
-				<ListItemText>{translateText('header.myProfile')}</ListItemText>
+				<ListItemText>{translateText('My profile')}</ListItemText>
 			</MenuItem>
 
 			{/* <MenuItem onClick={onClose}>
@@ -54,7 +54,7 @@ export const UserMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 				<ListItemIcon>
 					<LogoutIcon fontSize='small' />
 				</ListItemIcon>
-				<ListItemText>{translateText('header.logout')}</ListItemText>
+				<ListItemText>{translateText('Logout')}</ListItemText>
 			</MenuItem>
 		</Menu>
 	);

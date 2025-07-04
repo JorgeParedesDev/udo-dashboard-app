@@ -29,13 +29,13 @@ export const AppHeaderSearch = () => {
 			onSubmit={handleSubmit}>
 			<InputBase
 				sx={appHeaderSearchStyles.input(theme)}
-				placeholder={translateText('header.search')}
-				inputProps={{ 'aria-label': translateText('header.search') }}
+				placeholder={translateText('Search')}
+				inputProps={{ 'aria-label': translateText('Search') }}
 			/>
 			<IconButton
 				type='submit'
 				sx={appHeaderSearchStyles.iconButton(theme)}
-				aria-label={translateText('header.search')}>
+				aria-label={translateText('Search')}>
 				<SearchIcon />
 			</IconButton>
 		</Paper>

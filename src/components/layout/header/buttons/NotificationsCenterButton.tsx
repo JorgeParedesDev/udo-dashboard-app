@@ -21,11 +21,11 @@ export const NotificationsCenterButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.notificationsCenter')}>
+			<Tooltip title={translateText('Notifications Center')}>
 				<IconButton
 					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}
-					aria-label={translateText('header.notificationsCenter')}>
+					aria-label={translateText('Notifications Center')}>
 					<ChatOutlinedIcon />
 				</IconButton>
 			</Tooltip>

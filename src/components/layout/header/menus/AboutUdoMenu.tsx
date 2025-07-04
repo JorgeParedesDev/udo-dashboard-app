@@ -37,7 +37,7 @@ export const AboutUdoMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 					slotProps={{
 						primary: { sx: appHeaderStyles.aboutMenuTitle },
 					}}>
-					{translateText('header.about')}
+					{translateText('About UDo')}
 				</ListItemText>
 			</MenuItem>
 
@@ -73,7 +73,7 @@ export const AboutUdoMenu = ({ anchorEl, open, onClose }: AnchorMenuProps) => {
 					<SupportAgentIcon fontSize='small' />
 				</ListItemIcon>
 				<ListItemText>
-					{`Ticket UDo: ${translateText('header.create')}`}
+					{`Ticket UDo: ${translateText('Create')}`}
 				</ListItemText>
 			</MenuItem>
 

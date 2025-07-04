@@ -42,7 +42,7 @@ export const appHeaderStyles = {
 		my: 0.5,
 	},
 	languageMenuPaper: {
-		width: 160,
+		width: 175,
 	},
 	// Estilos para el AboutUdoMenu
 	aboutMenuTitle: {

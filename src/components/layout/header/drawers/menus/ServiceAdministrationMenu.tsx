@@ -49,7 +49,7 @@ export const ServiceAdministrationMenu = ({ popupState }: DrawerMenuProps) => {
 			<ServiceSubmenu />
 			<ScenarioSubmenu />
 			<MenuItem onClick={popupState.close}>
-				{translateText('menu.createNewService')}
+				{translateText('Create new service')}
 			</MenuItem>
 		</HoverMenu>
 	);

@@ -22,9 +22,9 @@ export const UserButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.user')}>
+			<Tooltip title={translateText('User')}>
 				<IconButton
-					aria-label={translateText('header.user')}
+					aria-label={translateText('User')}
 					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}>
 					<AccountCircleOutlinedIcon />

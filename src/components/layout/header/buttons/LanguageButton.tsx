@@ -23,11 +23,11 @@ export const LanguageButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.language')}>
+			<Tooltip title={translateText('Language')}>
 				<IconButton
 					sx={appHeaderStyles.iconButtonHeader(theme)}
 					onClick={handleOpen}
-					aria-label={translateText('header.language')}>
+					aria-label={translateText('Language')}>
 					<LanguageOutlinedIcon />
 				</IconButton>
 			</Tooltip>

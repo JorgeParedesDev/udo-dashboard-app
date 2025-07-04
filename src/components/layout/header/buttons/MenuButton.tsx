@@ -21,12 +21,12 @@ export const MenuButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.openSidebar')}>
+			<Tooltip title={translateText('Open sidebar')}>
 				<IconButton
 					edge='start'
 					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}
-					aria-label={translateText('header.openSidebar')}>
+					aria-label={translateText('Open sidebar')}>
 					<MenuIcon />
 				</IconButton>
 			</Tooltip>

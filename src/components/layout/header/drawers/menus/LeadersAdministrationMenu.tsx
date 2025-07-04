@@ -47,10 +47,10 @@ export const LeadersAdministrationMenu = ({ popupState }: DrawerMenuProps) => {
 			transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
 			<GroupSubmenu />
 			<MenuItem onClick={popupState.close}>
-				{translateText('menu.userCreation')}
+				{translateText('User creation')}
 			</MenuItem>
 			<MenuItem onClick={popupState.close}>
-				{translateText('menu.users')}
+				{translateText('Users')}
 			</MenuItem>
 		</HoverMenu>
 	);

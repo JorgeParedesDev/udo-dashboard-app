@@ -46,7 +46,7 @@ export const GroupSubmenu = () => {
 				ref={anchorRef}
 				onMouseOver={onMouseOver}
 				onMouseLeave={onMouseLeave}>
-				<ListItemText>{translateText('menu.group')}</ListItemText>
+				<ListItemText>{translateText('Group')}</ListItemText>
 				<ArrowRightIcon fontSize='small' />
 			</MenuItem>
 
@@ -68,7 +68,7 @@ export const GroupSubmenu = () => {
 				<Box sx={appDrawerMenuStyles.cascadingSubmenuPanel}>
 					{Array.from({ length: 40 }).map((_, index) => (
 						<MenuItem key={index} onClick={popupState.close}>
-							{`${translateText('menu.group')} ${index + 1}`}
+							{`${translateText('Group')} ${index + 1}`}
 						</MenuItem>
 					))}
 				</Box>

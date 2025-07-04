@@ -23,11 +23,11 @@ export const ThemeToggleButton = () => {
 	const icon = isDark ? <LightModeIcon /> : <DarkModeIcon />;
 
 	return (
-		<Tooltip title={translateText('header.toggleTheme')}>
+		<Tooltip title={translateText('Toggle theme')}>
 			<IconButton
 				onClick={toggleColorMode}
 				sx={(theme: Theme) => appHeaderStyles.iconButtonHeader(theme)}
-				aria-label={translateText('header.toggleTheme')}>
+				aria-label={translateText('Toggle theme')}>
 				{icon}
 			</IconButton>
 		</Tooltip>

@@ -22,9 +22,9 @@ export const AboutUdoButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.about')}>
+			<Tooltip title={translateText('About UDo')}>
 				<IconButton
-					aria-label={translateText('header.about')}
+					aria-label={translateText('About UDo')}
 					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}>
 					<InfoOutlinedIcon />

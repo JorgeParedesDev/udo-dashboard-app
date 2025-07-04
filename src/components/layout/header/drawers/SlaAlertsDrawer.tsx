@@ -26,7 +26,7 @@ export const SlaAlertsDrawer = ({ open, onClose }: DrawerProps) => {
 				<Box sx={drawerStyles.titleBox}>
 					<WarningAmberOutlinedIcon />
 					<Typography variant='subtitle1' fontWeight={600}>
-						{translateText('slaAlerts.title')}
+						{translateText('SLA Alerts')}
 					</Typography>
 				</Box>
 				<IconButton onClick={onClose}>
@@ -38,7 +38,7 @@ export const SlaAlertsDrawer = ({ open, onClose }: DrawerProps) => {
 
 			<Box sx={drawerStyles.contentBox}>
 				<Typography variant='body2' color='text.secondary'>
-					{translateText('slaAlerts.empty')}
+					{translateText('No active alerts')}
 				</Typography>
 			</Box>
 		</Drawer>

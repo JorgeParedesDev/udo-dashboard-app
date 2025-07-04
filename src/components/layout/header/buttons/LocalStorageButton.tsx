@@ -21,11 +21,11 @@ export const LocalStorageButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.localStorage')}>
+			<Tooltip title={translateText('Local Storage')}>
 				<IconButton
 					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}
-					aria-label={translateText('header.localStorage')}>
+					aria-label={translateText('Local Storage')}>
 					<StorageOutlinedIcon />
 				</IconButton>
 			</Tooltip>

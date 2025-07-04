@@ -46,7 +46,7 @@ export const ScenarioSubmenu = () => {
 				ref={anchorRef}
 				onMouseOver={onMouseOver}
 				onMouseLeave={onMouseLeave}>
-				<ListItemText>{translateText('menu.scenario')}</ListItemText>
+				<ListItemText>{translateText('Scenario')}</ListItemText>
 				<ArrowRightIcon fontSize='small' />
 			</MenuItem>
 
@@ -68,7 +68,7 @@ export const ScenarioSubmenu = () => {
 				<Box sx={appDrawerMenuStyles.cascadingSubmenuPanel}>
 					{Array.from({ length: 40 }).map((_, index) => (
 						<MenuItem key={index} onClick={popupState.close}>
-							{`${translateText('menu.scenario')} ${index + 1}`}
+							{`${translateText('Scenario')} ${index + 1}`}
 						</MenuItem>
 					))}
 				</Box>

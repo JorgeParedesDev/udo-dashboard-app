@@ -21,11 +21,11 @@ export const AlertsButton = () => {
 
 	return (
 		<>
-			<Tooltip title={translateText('header.alerts')}>
+			<Tooltip title={translateText('Alerts')}>
 				<IconButton
 					onClick={handleOpen}
 					sx={appHeaderStyles.iconButtonHeader(theme)}
-					aria-label={translateText('header.alerts')}>
+					aria-label={translateText('Alerts')}>
 					<NotificationsNoneOutlinedIcon />
 				</IconButton>
 			</Tooltip>

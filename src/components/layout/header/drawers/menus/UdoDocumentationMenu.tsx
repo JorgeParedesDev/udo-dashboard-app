@@ -44,10 +44,10 @@ export const UdoDocumentationMenu = ({ popupState }: DrawerMenuProps) => {
 			anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
 			transformOrigin={{ vertical: 'top', horizontal: 'left' }}>
 			<MenuItem onClick={popupState.close}>
-				{translateText('menu.documentation')}
+				{translateText('Documentation')}
 			</MenuItem>
 			<MenuItem onClick={popupState.close}>
-				{translateText('menu.templates')}
+				{translateText('Templates')}
 			</MenuItem>
 		</HoverMenu>
 	);

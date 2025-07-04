@@ -30,13 +30,9 @@ export const AppHeader = () => {
 			sx={appHeaderStyles.appBar(theme)}>
 			<Toolbar>
 				<MenuButton />
-				<Tooltip title={translateText('header.homeLinkLabel')}>
+				<Tooltip title={translateText('Go to homepage')}>
 					<Link to='/' style={appHeaderStyles.logoLink}>
-						<Logo
-							homeLinkLabel={translateText(
-								'header.homeLinkLabel'
-							)}
-						/>
+						<Logo homeLinkLabel={translateText('Go to homepage')} />
 					</Link>
 				</Tooltip>
 

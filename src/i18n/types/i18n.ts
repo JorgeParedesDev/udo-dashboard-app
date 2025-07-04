@@ -5,7 +5,7 @@
  */
 
 // Importa las traducciones base para extraer las claves disponibles
-import type en from '../locales/en.json';
+import type languageEn from '../locales/language_en.json';
 
 type RecursiveKeyOf<TObj extends object> = {
 	[TKey in keyof TObj & string]: TObj[TKey] extends object
@@ -13,12 +13,12 @@ type RecursiveKeyOf<TObj extends object> = {
 		: `${TKey}`;
 }[keyof TObj & string];
 
-export type TranslationKeys = RecursiveKeyOf<typeof en>;
+export type TranslationKeys = RecursiveKeyOf<(typeof languageEn)['en']>;
 
 /**
  * Códigos de idioma soportados por la app.
  */
-export type LanguageCode = 'es' | 'en';
+export type LanguageCode = 'es' | 'en' | 'pt' | 'de';
 
 export type LanguageOption = {
 	code: LanguageCode;

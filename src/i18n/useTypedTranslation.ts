@@ -6,14 +6,21 @@
 import { useTranslation } from 'react-i18next';
 
 import type { TranslationKeys } from './types/i18n';
+import { useGenderTranslation } from './genderUtils';
 
 export const useTypedTranslation = () => {
 	const { t } = useTranslation();
+	const { tGender } = useGenderTranslation();
 
 	const translateText = (
 		key: TranslationKeys,
 		options?: Record<string, unknown>
-	) => t(key, options);
+	): string => t(key, options);
 
-	return { translateText };
+	const translateGender = tGender;
+
+	return {
+		translateText,
+		translateGender,
+	};
 };
