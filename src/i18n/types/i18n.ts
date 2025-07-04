@@ -1,5 +1,5 @@
 /**
- * Archivo: i18n.d.ts
+ * Archivo: i18n.ts
  * Propósito: define el tipo recursivo para claves de traducción basadas en el JSON original
  * y los idiomas disponibles en la aplicación.
  */
